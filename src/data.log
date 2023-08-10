@@ -1,0 +1,40 @@
+2023-08-10 18:54:27,260 - File logger - INFO - Collection words was created!
+2023-08-10 19:28:58,517 - File logger - INFO - Collection is not created as expected
+2023-08-10 19:29:53,940 - File logger - INFO - Collection is not created as expected
+2023-08-10 19:34:02,579 - File logger - INFO - Collection is not created as expected!collection words already exists
+2023-08-10 19:34:58,994 - File logger - INFO - Collection is not created as expected! False
+2023-08-10 19:35:37,636 - File logger - INFO - Collection is not created as expected! Collection words already exists
+2023-08-10 19:41:22,680 - File logger - INFO - Collection words was created!
+2023-08-10 19:42:30,635 - File logger - INFO - Collection words was created!
+2023-08-10 19:42:45,669 - File logger - INFO - Collection words was droped/deleted!
+2023-08-10 20:17:53,693 - File logger - INFO - Collection words was created!
+2023-08-10 20:18:06,841 - File logger - INFO - Collection words was droped/deleted!
+2023-08-10 20:19:50,542 - File logger - INFO - Collection words was created!
+2023-08-10 20:20:02,511 - File logger - INFO - Collection words was droped/deleted!
+2023-08-10 20:24:40,733 - File logger - INFO - Collection words was created!
+2023-08-10 20:24:53,372 - File logger - INFO - Collection words was droped/deleted!
+2023-08-10 20:25:19,272 - File logger - INFO - Collection words was created!
+2023-08-10 20:25:31,117 - File logger - INFO - Collection words was droped/deleted!
+2023-08-10 20:27:08,524 - File logger - INFO - Collection words was created!
+2023-08-10 20:27:21,291 - File logger - INFO - Collection words was droped/deleted!
+2023-08-10 20:27:21,307 - File logger - INFO - User with id - 64d51df91ffa61a1ffa9bf24
+2023-08-10 20:29:02,150 - File logger - INFO - Collection users was droped/deleted!
+2023-08-10 20:54:37,179 - File logger - INFO - Collection words was created!
+2023-08-10 20:54:48,995 - File logger - INFO - User with id - 64d524689680257eeae15483
+2023-08-10 20:56:57,466 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-10 20:57:11,834 - File logger - INFO - User with id - 64d524f7409fa3d3eca0379c was created.
+2023-08-10 20:57:11,836 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-10 20:58:05,113 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-10 20:58:16,899 - File logger - INFO - User with id - 64d5253854e191db2929b714 was created.
+2023-08-10 20:58:16,900 - File logger - INFO - There was query to our db for @d.lt!
+2023-08-10 21:06:17,223 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-10 21:06:28,018 - File logger - INFO - User with id - 64d52724cf09130ab04963a4 was created.
+2023-08-10 21:06:28,019 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-10 21:07:09,503 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-10 21:07:20,647 - File logger - INFO - User with id - 64d52758deb0418e61bbd3f4 was created.
+2023-08-10 21:07:20,654 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-10 21:07:30,494 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-10 21:07:41,653 - File logger - INFO - User with id - 64d5276da3b5fdc18411e923 was created.
+2023-08-10 21:07:41,655 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-10 21:15:59,908 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-10 21:15:59,920 - File logger - INFO - There was query to our db for d@d.lt!
