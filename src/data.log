@@ -38,3 +38,47 @@
 2023-08-10 21:07:41,655 - File logger - INFO - There was query to our db for d@d.lt!
 2023-08-10 21:15:59,908 - File logger - INFO - There was query to our db for d@d.lt!
 2023-08-10 21:15:59,920 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-11 10:10:42,086 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-11 10:10:54,977 - File logger - INFO - User with id - 64d5defe799442d8f374abd9 was created.
+2023-08-11 10:10:54,979 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-11 10:10:54,993 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-11 10:10:55,006 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-11 10:26:36,118 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-11 10:26:46,841 - File logger - INFO - User with id - 64d5e2b6dc5ed7e1a487add0 was created.
+2023-08-11 10:26:46,849 - File logger - INFO - Collection words was droped/deleted!
+2023-08-11 10:26:46,858 - File logger - INFO - Collection users was droped/deleted!
+2023-08-12 21:35:29,925 - File logger - INFO - User written wrong input!
+2023-08-12 21:35:32,354 - File logger - INFO - User written wrong input!
+2023-08-12 21:35:34,987 - File logger - INFO - User written wrong input!
+2023-08-12 22:34:03,019 - File logger - INFO - User provided email without @!
+2023-08-12 22:34:28,679 - File logger - INFO - User provided email without @!
+2023-08-12 22:59:55,060 - File logger - INFO - User provided email without @!
+2023-08-12 23:08:40,168 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-12 23:09:46,620 - File logger - INFO - User with id - 64d7e70ac13065ac7d4c783d was created.
+2023-08-12 23:10:02,329 - File logger - INFO - User with id - 64d7e71adb379eb82ab94a99 was created.
+2023-08-12 23:10:13,202 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-12 23:10:30,556 - File logger - INFO - There was query to our db for lol@lol.lt!
+2023-08-12 23:16:09,065 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-12 23:31:15,074 - File logger - INFO - User written wrong input!
+2023-08-12 23:31:23,490 - File logger - INFO - User written wrong input!
+2023-08-12 23:31:26,133 - File logger - INFO - User written wrong input!
+2023-08-12 23:31:29,970 - File logger - INFO - There was provided more then one symbol!
+2023-08-12 23:32:41,047 - File logger - INFO - There was provided more then one symbol!
+2023-08-12 23:34:18,776 - File logger - INFO - There was provided more then one symbol!
+2023-08-12 23:34:19,801 - File logger - INFO - User doesn't provided correct values! Value = 1
+2023-08-12 23:34:27,959 - File logger - INFO - User doesn't provided correct values! Value = n
+2023-08-12 23:34:35,889 - File logger - INFO - User doesn't provided correct values! Value = n
+2023-08-12 23:34:42,686 - File logger - INFO - User doesn't provided correct values! Value = y
+2023-08-12 23:37:47,367 - File logger - INFO - User doesn't provided correct values! Value = 1
+2023-08-12 23:37:51,743 - File logger - INFO - There was provided more then one symbol!
+2023-08-12 23:37:54,375 - File logger - INFO - User doesn't provided correct values! Value = y
+2023-08-12 23:37:56,470 - File logger - INFO - User doesn't provided correct values! Value = n
+2023-08-12 23:38:36,327 - File logger - INFO - There was provided more then one symbol!
+2023-08-12 23:38:54,114 - File logger - INFO - There was provided more then one symbol!
+2023-08-12 23:38:55,935 - File logger - INFO - User doesn't provided correct values! Value = y
+2023-08-12 23:38:57,512 - File logger - INFO - User doesn't provided correct values! Value = d
+2023-08-12 23:38:58,781 - File logger - INFO - There was provided more then one symbol!
+2023-08-12 23:38:59,648 - File logger - INFO - There was provided more then one symbol!
+2023-08-12 23:39:00,490 - File logger - INFO - User doesn't provided correct values! Value = b
+2023-08-12 23:39:01,135 - File logger - INFO - User doesn't provided correct values! Value = n
+2023-08-12 23:41:22,954 - File logger - INFO - There was provided more then one symbol!

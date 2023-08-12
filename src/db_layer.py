@@ -79,7 +79,6 @@ class Base:
             db = client[self.database_name]
             collection = db[collection_name]
             random_word = RandomWords()
-            # think of quering information from collection
             for entry in range(50):
                 collection.insert_one(
                     {f"word": random_word.get_random_word(), "entry": str(entry)}
@@ -199,9 +198,4 @@ class MongoDB(Base):
 
 if __name__ == "__main__":
     db = MongoDB("0.0.0.0", "27017", "final_task")
-    # db.create_collection("words")
-    # db.create_words_for_game("words")
-    # db.crate_user("users", "d", "d@d.lt", "123")
-    # print(db.check_login("users", "d@d.lt", "12"))
-    print(db.get_user("users", "d@d.lt"))
-    print(type(db.get_user("users", "d@d.lt")))
+    db.crate_user("users", "d", "d@d.lt", "123")
