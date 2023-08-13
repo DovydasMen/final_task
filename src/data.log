@@ -82,3 +82,32 @@
 2023-08-12 23:39:00,490 - File logger - INFO - User doesn't provided correct values! Value = b
 2023-08-12 23:39:01,135 - File logger - INFO - User doesn't provided correct values! Value = n
 2023-08-12 23:41:22,954 - File logger - INFO - There was provided more then one symbol!
+2023-08-13 11:29:01,474 - File logger - INFO - User doesn't provided correct values! Value = 1
+2023-08-13 11:29:07,334 - File logger - INFO - User doesn't provided correct values! Value = y
+2023-08-13 11:29:09,114 - File logger - INFO - User doesn't provided correct values! Value = n
+2023-08-13 11:31:06,092 - File logger - INFO - There was provided more then one symbol!
+2023-08-13 11:31:08,140 - File logger - INFO - User doesn't provided correct values! Value = y
+2023-08-13 11:32:27,428 - File logger - INFO - User doesn't provided correct values! Value = 1
+2023-08-13 11:32:55,881 - File logger - INFO - User doesn't provided correct values! Value = @
+2023-08-13 11:33:59,219 - File logger - INFO - User doesn't provided correct values! Value = 1
+2023-08-13 11:35:13,242 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-13 11:35:49,322 - File logger - INFO - There was query to our db for dd@dd.lt!
+2023-08-13 11:47:16,018 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 11:47:23,655 - File logger - INFO - User with id - 64d8989b6266a41ce69d7ebe was created.
+2023-08-13 11:47:54,192 - File logger - INFO - There was query to our db for Jon@jon.lt!
+2023-08-13 11:48:01,606 - File logger - INFO - User with id - 64d898c19dda2072cea017fc was created.
+2023-08-13 12:17:19,313 - File logger - INFO - There was query to our db for dan@dan.lt!
+2023-08-13 12:17:23,208 - File logger - INFO - User with id - 64d89fa343d49c9b36b952f5 was created.
+2023-08-13 12:17:29,577 - File logger - INFO - There was query to our db for dan@dan.lt!
+2023-08-13 12:17:38,205 - File logger - INFO - There was query to our db for dan@dan.lt!
+2023-08-13 12:17:42,570 - File logger - INFO - There was query to our db for dan@dan.lt!
+2023-08-13 12:18:05,520 - File logger - INFO - There was query to our db for dan@dan.lt!
+2023-08-13 12:18:06,950 - File logger - INFO - There was query to our db for dan@dan.lt!
+2023-08-13 12:18:08,345 - File logger - INFO - There was query to our db for dan@dan.lt!
+2023-08-13 12:19:38,075 - File logger - INFO - There was query to our db for d1@d1.lt!
+2023-08-13 12:19:41,746 - File logger - INFO - User with id - 64d8a02d5ba968e8d65abb88 was created.
+2023-08-13 12:19:43,253 - File logger - INFO - There was query to our db for d1@d1.lt!
+2023-08-13 12:19:44,817 - File logger - INFO - There was query to our db for d1@d1.lt!
+2023-08-13 12:19:45,728 - File logger - INFO - There was query to our db for d1@d1.lt!
+2023-08-13 12:19:46,729 - File logger - INFO - There was query to our db for d1@d1.lt!
+2023-08-13 12:19:48,111 - File logger - INFO - There was query to our db for d1@d1.lt!

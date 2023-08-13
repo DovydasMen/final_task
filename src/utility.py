@@ -1,5 +1,6 @@
 from loggers.log_to_console import console_logger
 from loggers.log_to_file import file_logger
+from db_layer import MongoDB
 
 
 def get_user_option() -> int:
@@ -91,12 +92,16 @@ def get_y_n_value():
                 print("You have entered more than 1 symbol!")
                 file_logger.info("There was provided more then one symbol!")
                 continue
-            elif y_n_value == "y" or y_n_value == "n":
+            elif "y" in y_n_value:
+                break
+            elif "n" in y_n_value:
+                break
+            else:
                 print("Please select Y letter or n letter!")
                 file_logger.info(
                     f"User doesn't provided correct values! Value = {y_n_value}"
                 )
-                break
+                continue
         except KeyboardInterrupt:
             print("Please type in your email!")
             file_logger.info("User tried to paste information!")
@@ -104,10 +109,27 @@ def get_y_n_value():
             print("We have encountered unexpected error!", str(e), "Try again!")
             file_logger.info("User written wrong input!")
             continue
-        else:
-            break
     return y_n_value
 
 
+def three_times_login_checker(
+    host: str, port: str, database_name: str, email: str
+) -> bool:
+    db = MongoDB(host=host, port=port, database_name=database_name)
+    max_tries = 3
+    tries = 0
+    while tries < max_tries:
+        password = get_user_password()
+        hashed_pasword = hash_user_password(password=password)
+        db_responce = db.check_login("users", email=email, password=hashed_pasword)
+        if db_responce == False:
+            tries += 1
+            console_logger.info("You have provided bad password!")
+            continue
+        else:
+            break
+    return db_responce
+
+
 if __name__ == "__main__":
-    print(get_y_n_value())
+    db = MongoDB("0.0.0.0", "27017", "final_task")

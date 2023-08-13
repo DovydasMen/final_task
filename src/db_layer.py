@@ -115,7 +115,6 @@ class Base:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
             collection = db[collection_name]
-            # not hashed !
             user_info = {
                 "name": f"{name}",
                 "email": f"{email}",

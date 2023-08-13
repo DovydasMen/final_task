@@ -38,4 +38,8 @@ class Presentation:
 
     @staticmethod
     def is_all_information_correct() -> None:
-        print("Is information you provided correct? Y/n")
+        print("Is information that have you provided correct? Y/n")
+
+    @staticmethod
+    def show_users_email(email: str) -> None:
+        print(f"Your email - {email}")
