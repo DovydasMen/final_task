@@ -155,3 +155,24 @@
 2023-08-13 21:58:07,811 - File logger - INFO - There was query to our db for dan@dan.lt!
 2023-08-13 22:06:13,441 - File logger - INFO - Collection words was created!
 2023-08-13 22:06:22,872 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-13 22:51:31,044 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:51:31,062 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:51:32,960 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-13 22:53:02,982 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:53:02,996 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:53:04,939 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-13 22:53:36,351 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:53:36,364 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:53:38,486 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-13 22:56:24,178 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:56:24,191 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:56:24,863 - File logger - INFO - Collection words was created!
+2023-08-13 22:57:24,585 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:57:24,601 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:57:25,229 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-13 22:58:17,172 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:58:17,185 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 22:58:18,351 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-13 23:08:26,144 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 23:08:26,163 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 23:08:28,092 - File logger - INFO - Collection is not created as expected! Collection words already exists!

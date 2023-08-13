@@ -121,11 +121,15 @@ def game(user_id: str, user_name: str) -> None:
     Presentation.seprarator_between_lines()
     Presentation.play_a_game(user_name=user_name)
     db.create_collection("words")
-    db.create_words_for_game()
-    game = Game(
-        id=user_id,
-        name=user_name,
-    )
+    db.create_words_for_game("words")
+    game = Game(id=user_id, name=user_name, word=db.get_random_word("words"))
+    print(game.get_word())
+    if game.get_word() == None:
+        console_logger.info(
+            "We have issued unexpected error! System is going to shut down!"
+        )
+        file_logger.warning("Connection to db is lost!")
+        exit()
 
 
 def history(user_id: str, user_name: str) -> None:

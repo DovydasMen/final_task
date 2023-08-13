@@ -194,9 +194,10 @@ class Base:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
             collection = db[collection_name]
-            query = {"entry": {f"$eq : {randint(0,49)}"}}
+            value = randint(0, 49)
+            query = {"entry": {f"$eq": f"{value}"}}
             result = collection.find_one(query)
-            return result
+            return str(result["word"]).upper()
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
             return None
