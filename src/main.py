@@ -12,6 +12,7 @@ from db_layer import MongoDB
 from sys import exit
 from loggers.log_to_console import console_logger
 from loggers.log_to_file import file_logger
+from game_layer import Game
 
 
 def register_service() -> None:
@@ -20,10 +21,17 @@ def register_service() -> None:
     Presentation.seprarator_between_lines()
     while True:
         email = get_user_email_with_validator()
-        if db.is_email_unused("users", email=email) == False:
+        db_responce = db.is_email_unused("users", email=email)
+        if db_responce == False:
             file_logger.info(f"{email} is already in use!")
             Presentation.email_is_already_in_use()
             continue
+        elif db_responce == None:
+            console_logger.info(
+                "We encountered unexpected error. Try latter! Exiting the program!"
+            )
+            file_logger.critical("There is issues with db, there should be log upper!")
+            exit()
         else:
             break
     Presentation.seprarator_between_lines()
@@ -55,11 +63,11 @@ def register_service() -> None:
 def login_service_after_registration(email: str) -> None:
     Presentation.seprarator_between_lines()
     Presentation.show_users_email(email=email)
-    validation_result = three_times_login_checker(
+    password_validation_result = three_times_login_checker(
         "0.0.0.0", "27017", "final_task", email=email
     )
-    if validation_result is True:
-        game()
+    if password_validation_result is True:
+        game_console(email)
     else:
         file_logger.info(
             f"User provided bad pasword for three times. System shuts down!"
@@ -71,11 +79,57 @@ def login_service_after_registration(email: str) -> None:
 
 
 def login_service() -> None:
-    print("login service")
+    Presentation.login_introduction()
+    Presentation.seprarator_between_lines()
+    email = get_user_email_with_validator()
+    Presentation.seprarator_between_lines()
+    password_validation_result = three_times_login_checker(
+        "0.0.0.0", "27017", "final_task", email=email
+    )
+    if password_validation_result is True:
+        game_console(email)
+    else:
+        file_logger.info(
+            f"User provided bad pasword for three times. System shuts down!"
+        )
+        console_logger.info(
+            "You have provided bad password three times, system shuts down!"
+        )
+        exit()
 
 
-def game() -> None:
-    print("Hello from game!")
+def game_console(email: str) -> None:
+    account_info = db.get_user("users", email=email)
+    if account_info == None:
+        console_logger.info(
+            "We have issued unexpected error! System is going to shut down!"
+        )
+        file_logger.warning("Connection to db is lost!")
+        exit()
+    Presentation.seprarator_between_lines()
+    Presentation.game_introduction()
+    option = get_user_option()
+    if option == 1:
+        game(str(account_info["_id"]), str(account_info["name"]))
+    elif option == 2:
+        history(str(account_info["_id"]), str(account_info["name"]))
+    else:
+        exit()
+
+
+def game(user_id: str, user_name: str) -> None:
+    Presentation.seprarator_between_lines()
+    Presentation.play_a_game(user_name=user_name)
+    db.create_collection("words")
+    db.create_words_for_game()
+    game = Game(
+        id=user_id,
+        name=user_name,
+    )
+
+
+def history(user_id: str, user_name: str) -> None:
+    pass
 
 
 def app_run() -> None:

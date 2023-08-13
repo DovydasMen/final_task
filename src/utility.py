@@ -1,6 +1,7 @@
 from loggers.log_to_console import console_logger
 from loggers.log_to_file import file_logger
 from db_layer import MongoDB
+from typing import Optional
 
 
 def get_user_option() -> int:
@@ -114,7 +115,7 @@ def get_y_n_value():
 
 def three_times_login_checker(
     host: str, port: str, database_name: str, email: str
-) -> bool:
+) -> Optional[bool]:
     db = MongoDB(host=host, port=port, database_name=database_name)
     max_tries = 3
     tries = 0
@@ -126,6 +127,12 @@ def three_times_login_checker(
             tries += 1
             console_logger.info("You have provided bad password!")
             continue
+        elif db_responce == None:
+            console_logger.info(
+                "We encountered unexpected error. Try latter! Exiting the program!"
+            )
+            file_logger.critical("There is issues with db, there should be log upper!")
+            exit()
         else:
             break
     return db_responce

@@ -111,3 +111,47 @@
 2023-08-13 12:19:45,728 - File logger - INFO - There was query to our db for d1@d1.lt!
 2023-08-13 12:19:46,729 - File logger - INFO - There was query to our db for d1@d1.lt!
 2023-08-13 12:19:48,111 - File logger - INFO - There was query to our db for d1@d1.lt!
+2023-08-13 20:31:59,800 - File logger - INFO - There was query to our db for jonas@jonas.lt!
+2023-08-13 20:32:30,072 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64d9138f55c3a6a137e8d790, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-13 20:32:30,072 - File logger - INFO - jonas@jonas.lt is already in use!
+2023-08-13 20:36:51,798 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-13 20:37:22,103 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64d914b3f5970fd0c8225dc2, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-13 20:37:22,103 - File logger - INFO - d@d.lt is already in use!
+2023-08-13 20:39:18,960 - File logger - INFO - There was query to our db for jon@123.lt!
+2023-08-13 20:39:49,264 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64d9154618d7d78fcaa1a507, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-13 20:39:49,265 - File logger - INFO - jon@123.lt is already in use!
+2023-08-13 20:40:51,998 - File logger - INFO - There was query to our db for j@Wh.lt!
+2023-08-13 20:41:22,310 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64d915a32c00e93c359b9ee9, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-13 20:41:46,987 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-13 20:42:17,280 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64d915da2c00e93c359b9eea, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-13 20:45:20,786 - File logger - INFO - There was query to our db for jonas@valanciunas.lt!
+2023-08-13 20:45:24,485 - File logger - INFO - User with id - 64d916b45ff22e9c84f20e25 was created.
+2023-08-13 20:45:27,887 - File logger - INFO - There was query to our db for jonas@valanciunas.lt!
+2023-08-13 20:46:25,916 - File logger - INFO - There was query to our db for dar@dar.lt!
+2023-08-13 20:47:11,570 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64d91701416afbf98fe75e9e, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-13 20:47:39,270 - File logger - INFO - There was query to our db for dra@dra.lt!
+2023-08-13 20:47:42,890 - File logger - INFO - User with id - 64d9173e416afbf98fe75ea2 was created.
+2023-08-13 20:47:51,702 - File logger - INFO - There was query to our db for dra@dra.lt!
+2023-08-13 20:48:21,888 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64d91747416afbf98fe75ea3, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-13 20:55:44,830 - File logger - INFO - There was query to our db for g@g.lt!
+2023-08-13 20:55:47,218 - File logger - INFO - User with id - 64d9192371185b814693a563 was created.
+2023-08-13 20:55:57,843 - File logger - INFO - There was query to our db for g@g.lt!
+2023-08-13 20:56:28,005 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64d9192d71185b814693a564, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-13 20:56:28,006 - File logger - CRITICAL - There is issues with db, there should be log upper!
+2023-08-13 21:00:36,543 - File logger - INFO - There was query to our db for f@f.lt!
+2023-08-13 21:00:40,606 - File logger - INFO - User with id - 64d91a489417d8a21a9e82c9 was created.
+2023-08-13 21:00:42,935 - File logger - INFO - There was query to our db for f@f.lt!
+2023-08-13 21:13:43,395 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-13 21:14:07,360 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-13 21:14:23,650 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-13 21:44:22,397 - File logger - INFO - There was query to our db for Jon@jon.lt!
+2023-08-13 21:48:02,808 - File logger - INFO - There was query to our db for Jon@jon.lt!
+2023-08-13 21:48:44,111 - File logger - INFO - There was query to our db for Jon@jon.lt!
+2023-08-13 21:54:00,636 - File logger - INFO - There was query to our db for Jon@jon.lt!
+2023-08-13 21:54:10,297 - File logger - INFO - There was query to our db for Jon@jon.lt!
+2023-08-13 21:54:35,702 - File logger - INFO - There was query to our db for Jon@jon.lt!
+2023-08-13 21:55:42,720 - File logger - INFO - There was query to our db for Jon@jon.lt!
+2023-08-13 21:58:07,797 - File logger - INFO - There was query to our db for dan@dan.lt!
+2023-08-13 21:58:07,811 - File logger - INFO - There was query to our db for dan@dan.lt!
+2023-08-13 22:06:13,441 - File logger - INFO - Collection words was created!
+2023-08-13 22:06:22,872 - File logger - INFO - Collection is not created as expected! Collection words already exists!

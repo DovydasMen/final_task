@@ -14,7 +14,7 @@ class Presentation:
 
     @staticmethod
     def register_introduction() -> None:
-        print("For account creation we need to reciev fallowing information: ")
+        print("For account creation we need to recieve fallowing information: ")
         print("***************************************************************")
 
     @staticmethod
@@ -43,3 +43,19 @@ class Presentation:
     @staticmethod
     def show_users_email(email: str) -> None:
         print(f"Your email - {email}")
+
+    @staticmethod
+    def login_introduction() -> None:
+        print("For log into system please provide fallowing information: ")
+
+    @staticmethod
+    def game_introduction() -> None:
+        print("This is a Hangman!")
+        print("***************************************************************")
+        print(
+            "Following options:\n1.Play a game\n2.Look all ended game history!\n3.Exit"
+        )
+
+    @staticmethod
+    def play_a_game(user_name: str) -> None:
+        print(f"{user_name} we are loading your game, it could take some time!")

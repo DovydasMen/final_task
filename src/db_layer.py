@@ -10,6 +10,7 @@ from typing import List, Dict, Any, Optional
 from loggers.log_to_console import console_logger
 from loggers.log_to_file import file_logger
 from random_word import RandomWords
+from random import randint
 
 
 # class DbConnection(ABC):
@@ -135,7 +136,7 @@ class Base:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
             return ""
 
-    def is_email_unused(self, collection_name: str, email: str) -> bool:
+    def is_email_unused(self, collection_name: str, email: str) -> Optional[bool]:
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -147,12 +148,14 @@ class Base:
             return True
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return False
+            return None
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return False
+            return None
 
-    def check_login(self, collection_name: str, email: str, password: str) -> bool:
+    def check_login(
+        self, collection_name: str, email: str, password: str
+    ) -> Optional[bool]:
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -165,12 +168,12 @@ class Base:
             return False
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return False
+            return None
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return False
+            return None
 
-    def get_user(self, collection_name: str, email: str) -> Dict[str, Any]:
+    def get_user(self, collection_name: str, email: str) -> Optional[Dict[str, Any]]:
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -181,10 +184,25 @@ class Base:
             return result
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return {}
+            return None
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return {}
+            return None
+
+    def get_random_word(self, collection_name: str) -> Optional[str]:
+        try:
+            client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
+            db = client[self.database_name]
+            collection = db[collection_name]
+            query = {"entry": {f"$eq : {randint(0,49)}"}}
+            result = collection.find_one(query)
+            return result
+        except ConnectionFailure as e:
+            file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
+            return None
+        except PyMongoError as e:
+            file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
+            return None
 
 
 class MongoDB(Base):
@@ -197,4 +215,5 @@ class MongoDB(Base):
 
 if __name__ == "__main__":
     db = MongoDB("0.0.0.0", "27017", "final_task")
-    db.crate_user("users", "d", "d@d.lt", "123")
+    db.create_collection("words")
+    db.create_words_for_game("words")
