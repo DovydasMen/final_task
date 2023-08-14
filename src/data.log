@@ -176,3 +176,12 @@
 2023-08-13 23:08:26,144 - File logger - INFO - There was query to our db for J@J.lt!
 2023-08-13 23:08:26,163 - File logger - INFO - There was query to our db for J@J.lt!
 2023-08-13 23:08:28,092 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-14 20:39:32,808 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-14 20:40:03,109 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64da66d49a4be8197824f1a1, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-14 20:40:03,114 - File logger - CRITICAL - There is issues with db, there should be log upper!
+2023-08-14 21:46:35,525 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-14 21:46:35,548 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-14 21:46:37,052 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-14 21:48:48,281 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-14 21:48:48,296 - File logger - INFO - There was query to our db for J@J.lt!
+2023-08-14 21:48:48,979 - File logger - INFO - Collection is not created as expected! Collection words already exists!

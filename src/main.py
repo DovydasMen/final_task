@@ -123,7 +123,6 @@ def game(user_id: str, user_name: str) -> None:
     db.create_collection("words")
     db.create_words_for_game("words")
     game = Game(id=user_id, name=user_name, word=db.get_random_word("words"))
-    print(game.get_word())
     if game.get_word() == None:
         console_logger.info(
             "We have issued unexpected error! System is going to shut down!"
