@@ -185,3 +185,21 @@
 2023-08-14 21:48:48,281 - File logger - INFO - There was query to our db for J@J.lt!
 2023-08-14 21:48:48,296 - File logger - INFO - There was query to our db for J@J.lt!
 2023-08-14 21:48:48,979 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-17 16:49:17,972 - File logger - INFO - Game with id - 64de255d8fea86453097a663 was created.
+2023-08-17 16:49:17,982 - File logger - INFO - Game with id - 64de255d8fea86453097a665 was created.
+2023-08-17 16:49:54,718 - File logger - INFO - Game with id - 64de2582b0cf33c8baf55d74 was created.
+2023-08-17 16:49:54,728 - File logger - INFO - Game with id - 64de2582b0cf33c8baf55d76 was created.
+2023-08-17 16:50:18,705 - File logger - INFO - Game with id - 64de259a5ca8a52aa56440be was created.
+2023-08-17 16:50:18,713 - File logger - INFO - Game with id - 64de259a5ca8a52aa56440c0 was created.
+2023-08-17 16:50:41,226 - File logger - INFO - Game with id - 64de25b1388f1ba2f5fe85e1 was created.
+2023-08-17 16:50:41,251 - File logger - INFO - Game with id - 64de25b1388f1ba2f5fe85e3 was created.
+2023-08-17 16:50:49,728 - File logger - INFO - Game with id - 64de25b92c8bd044104cb9cb was created.
+2023-08-17 16:50:49,737 - File logger - INFO - Game with id - 64de25b92c8bd044104cb9cd was created.
+2023-08-17 16:51:56,274 - File logger - INFO - Game with id - 64de25fcfd2bca91e49d1076 was created.
+2023-08-17 16:51:56,283 - File logger - INFO - Game with id - 64de25fcfd2bca91e49d1078 was created.
+2023-08-17 16:52:06,030 - File logger - INFO - Game with id - 64de26068e721071864d4976 was created.
+2023-08-17 16:52:06,039 - File logger - INFO - Game with id - 64de26068e721071864d4978 was created.
+2023-08-17 16:52:32,774 - File logger - INFO - Game with id - 64de26204f6e8d610430e5cf was created.
+2023-08-17 16:52:32,783 - File logger - INFO - Game with id - 64de26204f6e8d610430e5d1 was created.
+2023-08-17 16:52:32,792 - File logger - INFO - Game with id - 64de26204f6e8d610430e5d3 was created.
+2023-08-17 16:52:32,800 - File logger - INFO - Game with id - 64de26204f6e8d610430e5d5 was created.

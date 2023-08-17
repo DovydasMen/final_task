@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from pymongo.cursor import Cursor
 from pymongo.errors import (
     CollectionInvalid,
     PyMongoError,
@@ -247,10 +248,16 @@ class Base:
             return None
 
     def get_game_number(self, collection_name: str) -> int:
-        try:
-            client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
-            db = client[self.database_name]
-            collection = db[collection_name]  
+        client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
+        db = client[self.database_name]
+        collection = db[collection_name]
+        pipeline = [{"$sort": {"game_number": -1}}]
+        result = collection.aggregate(pipeline)
+        return_result = ""
+        for item in result:
+            return_result = item["game_number"]
+            break
+        return return_result
 
     def get_all_finished_games(self, collection_name: str, user_id: str) -> List[Dict]:
         pass
@@ -272,5 +279,16 @@ class MongoDB(Base):
 
 if __name__ == "__main__":
     db = MongoDB("0.0.0.0", "27017", "final_task")
-    db.create_collection("words")
-    db.create_words_for_game("words")
+    db.add_game(
+        "games", "123", "1", "Dovydas", "1", ["a", "b"], ["c" "d"], ["e", "f"], True
+    )
+    db.add_game(
+        "games", "123", "2", "Dovydas", "2", ["g", "h"], ["c"], ["j", "f"], False
+    )
+    db.add_game(
+        "games", "123", "3", "Dovydas", "2", ["g", "h"], ["c"], ["j", "f"], False
+    )
+    db.add_game(
+        "games", "123", "4", "Dovydas", "2", ["g", "h"], ["c"], ["j", "f"], False
+    )
+    print(db.get_game_number("games"))
