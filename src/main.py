@@ -67,7 +67,7 @@ def login_service_after_registration(email: str) -> None:
         "0.0.0.0", "27017", "final_task", email=email
     )
     if password_validation_result is True:
-        game_console(email)
+        game_service(email)
     else:
         file_logger.info(
             f"User provided bad pasword for three times. System shuts down!"
@@ -87,7 +87,7 @@ def login_service() -> None:
         "0.0.0.0", "27017", "final_task", email=email
     )
     if password_validation_result is True:
-        game_console(email)
+        game_service(email)
     else:
         file_logger.info(
             f"User provided bad pasword for three times. System shuts down!"
@@ -98,7 +98,7 @@ def login_service() -> None:
         exit()
 
 
-def game_console(email: str) -> None:
+def game_service(email: str) -> None:
     account_info = db.get_user("users", email=email)
     if account_info == None:
         console_logger.info(
@@ -110,25 +110,26 @@ def game_console(email: str) -> None:
     Presentation.game_introduction()
     option = get_user_option()
     if option == 1:
-        game(str(account_info["_id"]), str(account_info["name"]))
+        game_setup(str(account_info["_id"]), str(account_info["name"]))
     elif option == 2:
         history(str(account_info["_id"]), str(account_info["name"]))
     else:
         exit()
 
 
-def game(user_id: str, user_name: str) -> None:
+def game_setup(user_id: str, user_name: str) -> None:
     Presentation.seprarator_between_lines()
     Presentation.play_a_game(user_name=user_name)
-    db.create_collection("words")
-    db.create_words_for_game("words")
-    game = Game(id=user_id, name=user_name, word=db.get_random_word("words"))
-    if game.get_word() == None:
-        console_logger.info(
-            "We have issued unexpected error! System is going to shut down!"
-        )
-        file_logger.warning("Connection to db is lost!")
-        exit()
+        db.get_all_finished_games("games", user_id=user_id)
+        # game = Game(id=user_id, name=user_name, word=db.get_random_word("words"))
+        # if game.get_word() != None:
+        #     console_logger.info(
+        #         "We have issued unexpected error! System is going to shut down!"
+        #     )
+        #     file_logger.warning("Connection to db is lost!")
+        #     exit()
+    
+def new_game()
 
 
 def history(user_id: str, user_name: str) -> None:
@@ -149,4 +150,7 @@ def app_run() -> None:
 
 if __name__ == "__main__":
     db = MongoDB("0.0.0.0", "27017", "final_task")
+    db.create_collection("words")
+    db.create_words_for_game("words")
     app_run()
+    db.drop_collection("words")
