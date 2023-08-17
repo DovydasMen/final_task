@@ -138,5 +138,60 @@ def three_times_login_checker(
     return db_responce
 
 
+def get_letter() -> str:
+    while True:
+        try:
+            all_letters = [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L",
+                "M",
+                "N",
+                "O",
+                "P",
+                "Q",
+                "R",
+                "S",
+                "T",
+                "U",
+                "V",
+                "W",
+                "X",
+                "Y",
+                "Z",
+            ]
+            letter = input("Please type letter: ").rstrip().lstrip().upper()
+            if len(letter) > 1:
+                print("You have entered more than 1 symbol!")
+                file_logger.info("There was provided more then one symbol!")
+                continue
+            elif letter in all_letters:
+                break
+            else:
+                print("Please select only letters!")
+                file_logger.info(
+                    f"User doesn't provided correct values! Value = {letter}"
+                )
+                continue
+        except KeyboardInterrupt:
+            print("Please type in your email!")
+            file_logger.info("User tried to paste information!")
+        except Exception as e:
+            print("We have encountered unexpected error!", str(e), "Try again!")
+            file_logger.info("User written wrong input!")
+            continue
+    return letter
+
+
 if __name__ == "__main__":
     db = MongoDB("0.0.0.0", "27017", "final_task")
+    print(get_letter())

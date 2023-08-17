@@ -7,6 +7,7 @@ from utility import (
     get_y_n_value,
     hash_user_password,
     three_times_login_checker,
+    get_letter,
 )
 from db_layer import MongoDB
 from sys import exit
@@ -110,26 +111,46 @@ def game_service(email: str) -> None:
     Presentation.game_introduction()
     option = get_user_option()
     if option == 1:
-        game_setup(str(account_info["_id"]), str(account_info["name"]))
+        game(str(account_info["_id"]), str(account_info["name"]))
     elif option == 2:
         history(str(account_info["_id"]), str(account_info["name"]))
     else:
         exit()
 
 
-def game_setup(user_id: str, user_name: str) -> None:
+def game(user_id: str, user_name: str) -> None:
     Presentation.seprarator_between_lines()
     Presentation.play_a_game(user_name=user_name)
-        db.get_all_finished_games("games", user_id=user_id)
-        # game = Game(id=user_id, name=user_name, word=db.get_random_word("words"))
-        # if game.get_word() != None:
-        #     console_logger.info(
-        #         "We have issued unexpected error! System is going to shut down!"
-        #     )
-        #     file_logger.warning("Connection to db is lost!")
-        #     exit()
-    
-def new_game()
+    game = Game(user_id, db.get_random_word("words"))
+    if game.get_word() == None:
+        console_logger.info(
+            "We have issued unexpected error! System is going to shut down!"
+        )
+        file_logger.warning("Connection to db is lost!")
+        exit()
+    Presentation.seprarator_between_lines()
+    while:
+        Presentation.seprarator_between_lines()
+        game.accept_letter_for_game(get_letter())
+        if game.get_game_status() == True:
+            Presentation.congratule_player(user_name=user_name)
+            word = game.get_word()
+            lives_left = game.get_lives_count()
+            incorect_guessed_letters = game.get_guesed_letters()
+            letters_left = game.get_left_letters()
+
+            db.add_game(
+                "games",
+                user_id=user_id,
+                word=word,
+                lives_left=lives_left,
+                incorrect_guessed_letters=incorect_guessed_letters,
+                letters_left=letters_left,
+            )
+            history(user_id=user_id, user_name=user_name)
+            break
+        elif game.get_lives_count> 0:
+
 
 
 def history(user_id: str, user_name: str) -> None:

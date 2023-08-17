@@ -1,3 +1,6 @@
+from typing import List, Optional
+
+
 class Presentation:
     @staticmethod
     def welcome() -> None:
@@ -59,3 +62,110 @@ class Presentation:
     @staticmethod
     def play_a_game(user_name: str) -> None:
         print(f"{user_name} we are loading your game, it could take some time!")
+
+    @staticmethod
+    def congratule_player(user_name: str) -> None:
+        print(f"{user_name} You have won the game!")
+
+    @staticmethod
+    def show_unused_letters(letters: List[str]) -> None:
+        print("Here is all letters that are left:")
+        Presentation.seprarator_between_lines()
+        for letter in letters:
+            print(letter, end=" ")
+
+    @staticmethod
+    def show_wrong_typed_letters(letters: List[str]) -> None:
+        print("Here is all wrong letters that you typed in:")
+        Presentation.seprarator_between_lines()
+        for letter in letters:
+            print(letter, end=" ")
+
+    @staticmethod
+    def hangman_visualization(lives_left: int) -> None:
+        if lives_left == 9:
+            print("{{{}}}")
+        elif lives_left == 8:
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print(" {{{}}}")
+        elif lives_left == 7:
+            print("   __________")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print(" {{{}}}")
+        elif lives_left == 6:
+            print("   __________")
+            print("   |         |")
+            print("   |         |")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print(" {{{}}}")
+        elif lives_left == 5:
+            print("   __________")
+            print("   |         |")
+            print("   |         |")
+            print("   |         O ")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print(" {{{}}}")
+        elif lives_left == 4:
+            print("   __________")
+            print("   |         |")
+            print("   |         |")
+            print("   |         O ")
+            print("   |         |")
+            print("   |         |")
+            print("   |   ")
+            print(" {{{}}}")
+        elif lives_left == 3:
+            print("   __________")
+            print("   |         |")
+            print("   |         |")
+            print("   |         O ")
+            print("   |        (|")
+            print("   |         |")
+            print("   |   ")
+            print(" {{{}}}")
+        elif lives_left == 2:
+            print("   __________")
+            print("   |         |")
+            print("   |         |")
+            print("   |         O ")
+            print("   |        (|)")
+            print("   |         |")
+            print("   |   ")
+            print(" {{{}}}")
+        elif lives_left == 1:
+            print("   __________")
+            print("   |         |")
+            print("   |         |")
+            print("   |         O ")
+            print("   |        (|)")
+            print("   |         |")
+            print("   |        (")
+            print(" {{{}}}")
+        elif lives_left == 0:
+            print("   __________")
+            print("   |         |")
+            print("   |         |")
+            print("   |         O ")
+            print("   |        (|)")
+            print("   |         |")
+            print("   |        ( )")
+            print(" {{{}}}")
+
+
+if __name__ == "__main__":
+    Presentation.hangman_visualization(0)

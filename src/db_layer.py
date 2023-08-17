@@ -210,13 +210,10 @@ class Base:
         self,
         collection_name: str,
         user_id: str,
-        game_number: str,
         word: str,
         lives_left: str,
         incorrect_guessed_letters: List[str],
         letters_left: List[str],
-        guessed_letters: List[str],
-        game_status: bool,
     ) -> Optional[str]:
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
@@ -224,13 +221,10 @@ class Base:
             collection = db[collection_name]
             game_info = {
                 "user_id": f"{user_id}",
-                "game_number": f"{game_number}",
                 "guessing_word": f"{word}",
                 "lives_left": f"{lives_left}",
                 "incorrect_guessed_letters": f"{incorrect_guessed_letters}",
                 "letter_left": f"{letters_left}",
-                "guessed_letters": f"{guessed_letters}",
-                "game_status": f"{game_status}",
             }
             result = collection.insert_one(game_info)
             file_logger.info(f"Game with id - {result.inserted_id} was created.")
@@ -247,25 +241,7 @@ class Base:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
             return None
 
-    def get_game_number(self, collection_name: str) -> int:
-        client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
-        db = client[self.database_name]
-        collection = db[collection_name]
-        pipeline = [{"$sort": {"game_number": -1}}]
-        result = collection.aggregate(pipeline)
-        return_result = ""
-        for item in result:
-            return_result = item["game_number"]
-            break
-        return return_result
-
-    def get_all_finished_games(self, collection_name: str, user_id: str) -> List[Dict]:
-        pass
-
-    def get_unfinished_game(self, collection_name: str, user_id: str) -> Dict:
-        pass
-
-    def delete_game(self, colllection_name: str, game_number) -> str:
+    def get_all_games(self, collection_name: str, user_id: str) -> List[Dict]:
         pass
 
 

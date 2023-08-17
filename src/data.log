@@ -203,3 +203,11 @@
 2023-08-17 16:52:32,783 - File logger - INFO - Game with id - 64de26204f6e8d610430e5d1 was created.
 2023-08-17 16:52:32,792 - File logger - INFO - Game with id - 64de26204f6e8d610430e5d3 was created.
 2023-08-17 16:52:32,800 - File logger - INFO - Game with id - 64de26204f6e8d610430e5d5 was created.
+2023-08-17 22:37:56,403 - File logger - INFO - User doesn't provided correct values! Value = 2
+2023-08-17 22:38:00,600 - File logger - INFO - User doesn't provided correct values! Value = 6
+2023-08-17 22:38:01,431 - File logger - INFO - User doesn't provided correct values! Value = -
+2023-08-17 22:38:02,108 - File logger - INFO - User doesn't provided correct values! Value = +
+2023-08-17 22:38:04,819 - File logger - INFO - User doesn't provided correct values! Value = /
+2023-08-17 22:38:05,775 - File logger - INFO - There was provided more then one symbol!
+2023-08-17 22:38:06,889 - File logger - INFO - User doesn't provided correct values! Value = 3
+2023-08-17 22:38:07,688 - File logger - INFO - User doesn't provided correct values! Value = 4

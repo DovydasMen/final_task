@@ -4,12 +4,8 @@ from loggers.log_to_console import console_logger
 
 
 class Game:
-    def __init__(
-        self, user_id: str, user_name: str, word: str, game_number: str
-    ) -> None:
+    def __init__(self, user_id: str, word: str) -> None:
         self.user_id = user_id
-        self._game_number = game_number
-        self.user_name = user_name
         self._word = word
         self.word_lenght_in_list = []
         self.lives_left = 10
@@ -43,13 +39,9 @@ class Game:
             "Z",
         ]
         self.guessing_word = []
-        self.game_status = False
 
     def get_word(self) -> Optional[str]:
         return self._word
-
-    def get_game_number(self) -> Optional[int]:
-        return int(self._game_number)
 
     def set_list_of_random_word(self) -> None:
         for number in range(len(self._word)):
@@ -91,9 +83,11 @@ class Game:
     def get_left_letters(self) -> List[str]:
         return self.letters_left
 
+    def get_guesed_letters(self) -> List[str]:
+        return self.guesed_letters
+
     def get_game_status(self) -> bool:
         if self.lives_left > 0 and "_" not in self.guessing_word:
-            self.game_status == True
             return True
         else:
             return False
