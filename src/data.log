@@ -211,3 +211,14 @@
 2023-08-17 22:38:05,775 - File logger - INFO - There was provided more then one symbol!
 2023-08-17 22:38:06,889 - File logger - INFO - User doesn't provided correct values! Value = 3
 2023-08-17 22:38:07,688 - File logger - INFO - User doesn't provided correct values! Value = 4
+2023-08-18 15:28:15,278 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-18 15:28:35,325 - File logger - INFO - User doesn't provided correct values! Value = 1
+2023-08-18 15:28:36,472 - File logger - INFO - User doesn't provided correct values! Value = 2
+2023-08-18 15:28:37,476 - File logger - INFO - Game with id - 64df63f578d16dd0b999b548 was created.
+2023-08-18 15:28:37,489 - File logger - INFO - Collection words was droped/deleted!
+2023-08-18 15:33:29,047 - File logger - INFO - Collection is not created as expected! Collection words already exists!
+2023-08-18 15:34:06,339 - File logger - INFO - Game with id - 64df653ea99b207732ee70a3 was created.
+2023-08-18 15:34:06,358 - File logger - INFO - Collection words was droped/deleted!
+2023-08-18 15:34:09,699 - File logger - INFO - Collection words was created!
+2023-08-18 15:34:26,196 - File logger - INFO - Game with id - 64df65528c3557f7c91e6611 was created.
+2023-08-18 15:34:26,210 - File logger - INFO - Collection words was droped/deleted!

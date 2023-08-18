@@ -92,6 +92,9 @@ class Game:
         else:
             return False
 
+    def get_guessing_word(self) -> List[str]:
+        return self.guessing_word
+
 
 if __name__ == "__main__":
     game = Game("123", "Dovydas", "aaaabbbbcccc")

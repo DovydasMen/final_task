@@ -82,10 +82,10 @@ class Presentation:
             print(letter, end=" ")
 
     @staticmethod
-    def hangman_visualization(lives_left: int) -> None:
-        if lives_left == 9:
+    def hangman_visualization(lifes_left: int) -> None:
+        if lifes_left == 9:
             print("{{{}}}")
-        elif lives_left == 8:
+        elif lifes_left == 8:
             print("   |   ")
             print("   |   ")
             print("   |   ")
@@ -93,7 +93,7 @@ class Presentation:
             print("   |   ")
             print("   |   ")
             print(" {{{}}}")
-        elif lives_left == 7:
+        elif lifes_left == 7:
             print("   __________")
             print("   |   ")
             print("   |   ")
@@ -102,7 +102,7 @@ class Presentation:
             print("   |   ")
             print("   |   ")
             print(" {{{}}}")
-        elif lives_left == 6:
+        elif lifes_left == 6:
             print("   __________")
             print("   |         |")
             print("   |         |")
@@ -111,25 +111,25 @@ class Presentation:
             print("   |   ")
             print("   |   ")
             print(" {{{}}}")
-        elif lives_left == 5:
-            print("   __________")
-            print("   |         |")
-            print("   |         |")
-            print("   |         O ")
-            print("   |   ")
-            print("   |   ")
-            print("   |   ")
-            print(" {{{}}}")
-        elif lives_left == 4:
+        elif lifes_left == 5:
             print("   __________")
             print("   |         |")
             print("   |         |")
             print("   |         O ")
+            print("   |   ")
+            print("   |   ")
+            print("   |   ")
+            print(" {{{}}}")
+        elif lifes_left == 4:
+            print("   __________")
+            print("   |         |")
+            print("   |         |")
+            print("   |         O ")
             print("   |         |")
             print("   |         |")
             print("   |   ")
             print(" {{{}}}")
-        elif lives_left == 3:
+        elif lifes_left == 3:
             print("   __________")
             print("   |         |")
             print("   |         |")
@@ -138,7 +138,7 @@ class Presentation:
             print("   |         |")
             print("   |   ")
             print(" {{{}}}")
-        elif lives_left == 2:
+        elif lifes_left == 2:
             print("   __________")
             print("   |         |")
             print("   |         |")
@@ -147,7 +147,7 @@ class Presentation:
             print("   |         |")
             print("   |   ")
             print(" {{{}}}")
-        elif lives_left == 1:
+        elif lifes_left == 1:
             print("   __________")
             print("   |         |")
             print("   |         |")
@@ -156,7 +156,7 @@ class Presentation:
             print("   |         |")
             print("   |        (")
             print(" {{{}}}")
-        elif lives_left == 0:
+        elif lifes_left == 0:
             print("   __________")
             print("   |         |")
             print("   |         |")
@@ -165,6 +165,21 @@ class Presentation:
             print("   |         |")
             print("   |        ( )")
             print(" {{{}}}")
+
+    @staticmethod
+    def show_lifes_left(lifes: int) -> None:
+        if lifes == 1:
+            print(f"You have {lifes} life left")
+        print(f"You still have {lifes} lifes left")
+
+    @staticmethod
+    def show_guessing_word(word: List) -> None:
+        for letter in word:
+            print(letter, end=" ")
+
+    @staticmethod
+    def show_message_for_lose(user_name: str) -> None:
+        print(f"Sorry {user_name}! You ran out of lifes! ")
 
 
 if __name__ == "__main__":

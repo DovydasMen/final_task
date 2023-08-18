@@ -122,14 +122,14 @@ def game(user_id: str, user_name: str) -> None:
     Presentation.seprarator_between_lines()
     Presentation.play_a_game(user_name=user_name)
     game = Game(user_id, db.get_random_word("words"))
+    game.set_list_lenght_for_guessing()
     if game.get_word() == None:
         console_logger.info(
             "We have issued unexpected error! System is going to shut down!"
         )
         file_logger.warning("Connection to db is lost!")
         exit()
-    Presentation.seprarator_between_lines()
-    while:
+    while True:
         Presentation.seprarator_between_lines()
         game.accept_letter_for_game(get_letter())
         if game.get_game_status() == True:
@@ -138,7 +138,6 @@ def game(user_id: str, user_name: str) -> None:
             lives_left = game.get_lives_count()
             incorect_guessed_letters = game.get_guesed_letters()
             letters_left = game.get_left_letters()
-
             db.add_game(
                 "games",
                 user_id=user_id,
@@ -149,12 +148,41 @@ def game(user_id: str, user_name: str) -> None:
             )
             history(user_id=user_id, user_name=user_name)
             break
-        elif game.get_lives_count> 0:
-
+        elif game.get_lives_count() > 0:
+            Presentation.seprarator_between_lines()
+            Presentation.show_guessing_word(game.get_guesed_letters())
+            Presentation.seprarator_between_lines()
+            life_left = game.get_lives_count()
+            Presentation.show_lifes_left(life_left)
+            Presentation.seprarator_between_lines()
+            Presentation.hangman_visualization(life_left)
+            Presentation.seprarator_between_lines()
+            Presentation.show_wrong_typed_letters(game.get_guesed_letters())
+            Presentation.seprarator_between_lines()
+            Presentation.show_unused_letters(game.get_left_letters())
+            continue
+        else:
+            if game.get_lives_count() == 0:
+                Presentation.seprarator_between_lines()
+                Presentation.show_message_for_lose()
+                word = game.get_word()
+                lives_left = game.get_lives_count()
+                incorect_guessed_letters = game.get_guesed_letters()
+                letters_left = game.get_left_letters()
+                db.add_game(
+                    "games",
+                    user_id=user_id,
+                    word=word,
+                    lives_left=lives_left,
+                    incorrect_guessed_letters=incorect_guessed_letters,
+                    letters_left=letters_left,
+                )
+                history(user_id=user_id, user_name=user_name)
+                break
 
 
 def history(user_id: str, user_name: str) -> None:
-    pass
+    print("This is history!")
 
 
 def app_run() -> None:
@@ -173,5 +201,5 @@ if __name__ == "__main__":
     db = MongoDB("0.0.0.0", "27017", "final_task")
     db.create_collection("words")
     db.create_words_for_game("words")
-    app_run()
+    game("1234", "Dovydas")
     db.drop_collection("words")
