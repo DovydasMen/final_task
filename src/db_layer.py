@@ -1,3 +1,4 @@
+# pylint: skip-file
 from pymongo import MongoClient
 from pymongo.cursor import Cursor
 from pymongo.errors import (
@@ -5,6 +6,7 @@ from pymongo.errors import (
     PyMongoError,
     ConnectionFailure,
     WriteError,
+    OperationFailure,
 )
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional
@@ -14,45 +16,41 @@ from random_word import RandomWords
 from random import randint
 
 
-# class DbConnection(ABC):
-#     @abstractmethod
-#     def create_collection() -> bool:
-#         pass
+class DbConnection(ABC):
+    @abstractmethod
+    def create_collection() -> bool:
+        pass
 
-#     @abstractmethod
-#     def create_user() -> int:
-#         pass
+    @abstractmethod
+    def create_user() -> Optional[str]:
+        pass
 
-#     @abstractmethod
-#     def check_login() -> bool:
-#         pass
-#
-#     @abstractmethod
-#     def is_email_unused()-> bool:
-#         pass
+    @abstractmethod
+    def check_login() -> Optional[bool]:
+        pass
 
-#     @abstractmethod
-#     def create_words_for_game() -> None:
-#         pass
+    @abstractmethod
+    def is_email_used() -> Optional[bool]:
+        pass
 
-#     @abstractmethod
-#     def drop_collection() -> str:
-#         pass
+    @abstractmethod
+    def create_words_for_game() -> None:
+        pass
 
-#     @abstractmethod
-#     def get_user() -> str:
-#         pass
+    @abstractmethod
+    def drop_collection() -> None:
+        pass
 
-#     @abstractmethod
-#     def get_user_all_games() -> List[Dict[str, Any]]:
-#         pass
+    @abstractmethod
+    def get_user() -> Optional[Dict[str, Any]]:
+        pass
 
-#     @abstractmethod
-#     def get_user_unfinished_game() -> Dict[str, Any]:
-#         pass
+    @abstractmethod
+    def get_all_games() -> Cursor:
+        pass
 
 
-class Base:
+class Base(DbConnection):
     def __init__(self, host: str, port: str, database_name: str) -> None:
         self.host = host
         self.port = port
@@ -89,15 +87,15 @@ class Base:
             file_logger.info(
                 f"We faced error while creating user! {str(e).capitalize()}"
             )
-            return ""
+            return
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return ""
+            return
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return ""
+            return
 
-    def drop_collection(self, collection_name: str) -> str:
+    def drop_collection(self, collection_name: str) -> None:
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -105,14 +103,14 @@ class Base:
             file_logger.info(f"Collection {collection_name} was droped/deleted!")
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return None
+            return
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return None
+            return
 
-    def crate_user(
+    def create_user(
         self, collection_name: str, name: str, email: str, password: str
-    ) -> str:
+    ) -> Optional[str]:
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -129,15 +127,15 @@ class Base:
             file_logger.info(
                 f"We faced error while creating user! {str(e).capitalize()}"
             )
-            return ""
+            return None
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return ""
+            return None
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return ""
+            return None
 
-    def is_email_unused(self, collection_name: str, email: str) -> Optional[bool]:
+    def is_email_used(self, collection_name: str, email: str) -> Optional[bool]:
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -145,8 +143,8 @@ class Base:
             file_logger.info(f"There was query to our db for {email}!")
             query = {"email": {"$eq": email}}
             if collection.find_one(query) != None:
-                return False
-            return True
+                return True
+            return False
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
             return None
@@ -211,9 +209,10 @@ class Base:
         collection_name: str,
         user_id: str,
         word: str,
-        lives_left: str,
+        lifes_left: str,
         incorrect_guessed_letters: List[str],
         letters_left: List[str],
+        game_status: bool,
     ) -> Optional[str]:
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
@@ -222,9 +221,10 @@ class Base:
             game_info = {
                 "user_id": f"{user_id}",
                 "guessing_word": f"{word}",
-                "lives_left": f"{lives_left}",
+                "lifes_left": f"{lifes_left}",
                 "incorrect_guessed_letters": f"{incorrect_guessed_letters}",
                 "letter_left": f"{letters_left}",
+                "game_status": f"{game_status}",
             }
             result = collection.insert_one(game_info)
             file_logger.info(f"Game with id - {result.inserted_id} was created.")
@@ -241,8 +241,23 @@ class Base:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
             return None
 
-    def get_all_games(self, collection_name: str, user_id: str) -> List[Dict]:
-        pass
+    def get_all_games(self, collection_name: str, user_id: str) -> Optional[Cursor]:
+        try:
+            client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
+            db = client[self.database_name]
+            collection = db[collection_name]
+            file_logger.info(
+                f"There was query to our db for games according to user_id: {user_id}!"
+            )
+            pipeline = [{"$match": {"user_id": f"{user_id}"}}]
+            result = collection.aggregate(pipeline)
+            return result
+        except ConnectionFailure as e:
+            file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
+            return None
+        except PyMongoError as e:
+            file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
+            return None
 
 
 class MongoDB(Base):
@@ -252,19 +267,23 @@ class MongoDB(Base):
         self.port = port
         self.database_name = database_name
 
+    def set_up_schema_validator(
+        self, collection_name: str, validator_rule: Dict[str, Any]
+    ) -> Optional[bool]:
+        try:
+            client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
+            db = client[self.database_name]
+            collection = db[collection_name]
+            db.command("collMod", collection.name, **validator_rule)
+            file_logger.info("Validator rule was set")
+            return True
+        except OperationFailure as e:
+            file_logger.info(f" We have encountered operational issue {e}")
+            return
+        except Exception as e:
+            file_logger.info(f"We have encountered unxepected error {e}")
+            return
+
 
 if __name__ == "__main__":
-    db = MongoDB("0.0.0.0", "27017", "final_task")
-    db.add_game(
-        "games", "123", "1", "Dovydas", "1", ["a", "b"], ["c" "d"], ["e", "f"], True
-    )
-    db.add_game(
-        "games", "123", "2", "Dovydas", "2", ["g", "h"], ["c"], ["j", "f"], False
-    )
-    db.add_game(
-        "games", "123", "3", "Dovydas", "2", ["g", "h"], ["c"], ["j", "f"], False
-    )
-    db.add_game(
-        "games", "123", "4", "Dovydas", "2", ["g", "h"], ["c"], ["j", "f"], False
-    )
-    print(db.get_game_number("games"))
+    pass

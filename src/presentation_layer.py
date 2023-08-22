@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Dict, Any
 
 
 class Presentation:
@@ -44,7 +44,7 @@ class Presentation:
         print("Is information that have you provided correct? Y/n")
 
     @staticmethod
-    def show_users_email(email: str) -> None:
+    def show_user_email(email: str) -> None:
         print(f"Your email - {email}")
 
     @staticmethod
@@ -71,19 +71,28 @@ class Presentation:
     def show_unused_letters(letters: List[str]) -> None:
         print("Here is all letters that are left:")
         Presentation.seprarator_between_lines()
+        print("\n")
         for letter in letters:
             print(letter, end=" ")
+        print("\n")
 
     @staticmethod
     def show_wrong_typed_letters(letters: List[str]) -> None:
-        print("Here is all wrong letters that you typed in:")
-        Presentation.seprarator_between_lines()
-        for letter in letters:
-            print(letter, end=" ")
+        if letters == [] and len(letters) == 0:
+            print("You have still guessed all letters correctly!")
+        else:
+            print("Here is all wrong letters that you typed in:")
+            Presentation.seprarator_between_lines()
+            print("\n")
+            for letter in letters:
+                print(letter, end=" ")
+            print("\n")
 
     @staticmethod
     def hangman_visualization(lifes_left: int) -> None:
-        if lifes_left == 9:
+        if lifes_left == 10:
+            print("You have all lifes left. So there is no structure of hangman!")
+        elif lifes_left == 9:
             print("{{{}}}")
         elif lifes_left == 8:
             print("   |   ")
@@ -169,18 +178,37 @@ class Presentation:
     @staticmethod
     def show_lifes_left(lifes: int) -> None:
         if lifes == 1:
-            print(f"You have {lifes} life left")
-        print(f"You still have {lifes} lifes left")
-
-    @staticmethod
-    def show_guessing_word(word: List) -> None:
-        for letter in word:
-            print(letter, end=" ")
+            print(f"You have {lifes} life left.")
+        else:
+            print(f"You still have {lifes} lifes left.")
 
     @staticmethod
     def show_message_for_lose(user_name: str) -> None:
-        print(f"Sorry {user_name}! You ran out of lifes! ")
+        print(f"Sorry {user_name}! You ran out of lifes! That means it's lost! ")
 
+    @staticmethod
+    def show_guessing_word(word_in_list: List[str]) -> None:
+        print("This is your guessing word:")
+        print("\n")
+        for letter in word_in_list:
+            print(letter, end=" ")
+        print("\n")
 
-if __name__ == "__main__":
-    Presentation.hangman_visualization(0)
+    @staticmethod
+    def history_greet(user_name: str) -> None:
+        print(f"{user_name.title()}, this is yours all games history:")
+
+    @staticmethod
+    def history_representation(games: List[Dict[str, Any]]) -> None:
+        for game_information in games:
+            if game_information["game_status"] == "True":
+                print("You have won this game!")
+            else:
+                print("You lost this game!")
+            print(f"Your game word was {game_information['guessing_word']}.")
+            print(f"There was {game_information['lifes_left']} lifes left!")
+            print(
+                f"This is incorrect letters that you gave used - {game_information['incorrect_guessed_letters']}."
+            )
+            print(f"These letters was selected {game_information['letter_left']}.")
+            Presentation.seprarator_between_lines()

@@ -1,3 +1,4 @@
+# pylint: skip-file
 from loggers.log_to_console import console_logger
 from loggers.log_to_file import file_logger
 from db_layer import MongoDB
@@ -13,8 +14,9 @@ def get_user_option() -> int:
                 continue
         except ValueError:
             print("Please write numbers!")
-            file_logger.info(f"User written wrong value input {selection} !")
+            file_logger.info(f"User written wrong value input!")
         except KeyboardInterrupt:
+            # paste error
             print("Please type in integer value!")
             file_logger.info("User written wrong input!")
         except Exception as e:
@@ -30,9 +32,6 @@ def get_user_name() -> str:
     while True:
         try:
             user_name = input("Name: ").rstrip().lstrip()
-        except KeyboardInterrupt:
-            print("Please type in your name!")
-            file_logger.info("User tried to paste information!")
         except Exception as e:
             print("We have encountered unexpected error!", str(e), "Try again!")
             file_logger.info("User written wrong input!")
@@ -47,14 +46,13 @@ def get_user_email_with_validator() -> str:
         try:
             user_email = input("Email: ").rstrip().lstrip()
             if "@" not in user_email:
-                # think about .com or etc validator!
-                # THINK ABOUTI F USER PROVIDES ONLY @
                 file_logger.info("User provided email without @!")
-                print("You provided email without special char @")
+                print("You provided email without special char @.")
                 continue
-        except KeyboardInterrupt:
-            print("Please type in your email!")
-            file_logger.info("User tried to paste information!")
+            if len(user_email) < 6:
+                file_logger.info("User provided to short email!")
+                print("You provided incorrect email.")
+                continue
         except Exception as e:
             print("We have encountered unexpected error!", str(e), "Try again!")
             file_logger.info("User written wrong input!")
@@ -68,9 +66,6 @@ def get_user_password() -> str:
     while True:
         try:
             user_password = input("Password: ").rstrip().lstrip()
-        except KeyboardInterrupt:
-            print("Please type in your password!")
-            file_logger.info("User tried to paste information!")
         except Exception as e:
             print("We have encountered unexpected error!", str(e), "Try again!")
             file_logger.info("User written wrong input!")
@@ -104,6 +99,7 @@ def get_y_n_value():
                 )
                 continue
         except KeyboardInterrupt:
+            # paste error
             print("Please type in your email!")
             file_logger.info("User tried to paste information!")
         except Exception as e:
@@ -122,12 +118,12 @@ def three_times_login_checker(
     while tries < max_tries:
         password = get_user_password()
         hashed_pasword = hash_user_password(password=password)
-        db_responce = db.check_login("users", email=email, password=hashed_pasword)
-        if db_responce == False:
+        db_response = db.check_login("users", email=email, password=hashed_pasword)
+        if db_response == False:
             tries += 1
             console_logger.info("You have provided bad password!")
             continue
-        elif db_responce == None:
+        elif db_response == None:
             console_logger.info(
                 "We encountered unexpected error. Try latter! Exiting the program!"
             )
@@ -135,46 +131,19 @@ def three_times_login_checker(
             exit()
         else:
             break
-    return db_responce
+    return db_response
 
 
 def get_letter() -> str:
     while True:
         try:
-            all_letters = [
-                "A",
-                "B",
-                "C",
-                "D",
-                "E",
-                "F",
-                "G",
-                "H",
-                "I",
-                "J",
-                "K",
-                "L",
-                "M",
-                "N",
-                "O",
-                "P",
-                "Q",
-                "R",
-                "S",
-                "T",
-                "U",
-                "V",
-                "W",
-                "X",
-                "Y",
-                "Z",
-            ]
+            # is alpha!
             letter = input("Please type letter: ").rstrip().lstrip().upper()
             if len(letter) > 1:
                 print("You have entered more than 1 symbol!")
                 file_logger.info("There was provided more then one symbol!")
                 continue
-            elif letter in all_letters:
+            elif letter.isalpha():
                 break
             else:
                 print("Please select only letters!")
