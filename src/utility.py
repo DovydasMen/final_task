@@ -4,6 +4,8 @@ from loggers.log_to_file import file_logger
 from db_layer import MongoDB
 from typing import Optional
 
+import re
+
 
 def get_user_option() -> int:
     while True:
@@ -15,10 +17,6 @@ def get_user_option() -> int:
         except ValueError:
             print("Please write numbers!")
             file_logger.info(f"User written wrong value input!")
-        except KeyboardInterrupt:
-            # paste error
-            print("Please type in integer value!")
-            file_logger.info("User written wrong input!")
         except Exception as e:
             print("We have encountered unexpected error!", str(e), "Try again!")
             file_logger.info("User written wrong input!")
@@ -41,18 +39,10 @@ def get_user_name() -> str:
     return user_name
 
 
-def get_user_email_with_validator() -> str:
+def get_user_email() -> str:
     while True:
         try:
             user_email = input("Email: ").rstrip().lstrip()
-            if "@" not in user_email:
-                file_logger.info("User provided email without @!")
-                print("You provided email without special char @.")
-                continue
-            if len(user_email) < 6:
-                file_logger.info("User provided to short email!")
-                print("You provided incorrect email.")
-                continue
         except Exception as e:
             print("We have encountered unexpected error!", str(e), "Try again!")
             file_logger.info("User written wrong input!")
@@ -60,6 +50,15 @@ def get_user_email_with_validator() -> str:
         else:
             break
     return user_email
+
+
+def is_email_valid(user_email: str) -> bool:
+    regex = re.compile(
+        r"([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+"
+    )
+    if re.fullmatch(regex, user_email):
+        return True
+    return False
 
 
 def get_user_password() -> str:
@@ -98,10 +97,6 @@ def get_y_n_value():
                     f"User doesn't provided correct values! Value = {y_n_value}"
                 )
                 continue
-        except KeyboardInterrupt:
-            # paste error
-            print("Please type in your email!")
-            file_logger.info("User tried to paste information!")
         except Exception as e:
             print("We have encountered unexpected error!", str(e), "Try again!")
             file_logger.info("User written wrong input!")
@@ -151,9 +146,6 @@ def get_letter() -> str:
                     f"User doesn't provided correct values! Value = {letter}"
                 )
                 continue
-        except KeyboardInterrupt:
-            print("Please type in your email!")
-            file_logger.info("User tried to paste information!")
         except Exception as e:
             print("We have encountered unexpected error!", str(e), "Try again!")
             file_logger.info("User written wrong input!")
@@ -162,5 +154,5 @@ def get_letter() -> str:
 
 
 if __name__ == "__main__":
-    db = MongoDB("0.0.0.0", "27017", "final_task")
-    print(get_letter())
+    # db = MongoDB("0.0.0.0", "27017", "final_task")
+    print(is_email_valid("dejau@regexo.lt"))

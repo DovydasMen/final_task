@@ -3,12 +3,13 @@ from presentation_layer import Presentation
 from utility import (
     get_user_option,
     get_user_name,
-    get_user_email_with_validator,
+    get_user_email,
     get_user_password,
     get_y_n_value,
     hash_user_password,
     three_times_login_checker,
     get_letter,
+    is_email_valid,
 )
 from db_layer import MongoDB
 from sys import exit
@@ -28,20 +29,26 @@ def register_service() -> None:
     name = get_user_name()
     Presentation.seprarator_between_lines()
     while True:
-        email = get_user_email_with_validator()
-        db_response = db.is_email_used("users", email=email)
-        if db_response == True:
-            file_logger.info(f"{email} is already in use!")
-            Presentation.email_is_already_in_use()
-            continue
-        elif db_response == None:
-            console_logger.info(
-                "We encountered unexpected error. Try latter! Exiting the program!"
-            )
-            file_logger.critical("There is issues with db, there should be log upper!")
-            exit()
+        email = get_user_email()
+        if is_email_valid(email):
+            db_response = db.is_email_used("users", email=email)
+            if db_response:
+                file_logger.info(f"{email} is already in use!")
+                Presentation.email_is_already_in_use()
+                continue
+            elif not db_response:
+                console_logger.info(
+                    "We encountered unexpected error. Try latter! Exiting the program!"
+                )
+                file_logger.critical(
+                    "There is issues with db, there should be log upper!"
+                )
+                exit()
+            else:
+                break
         else:
-            break
+            console_logger.info(f"Please provide valid email!")
+            continue
     Presentation.seprarator_between_lines()
     password = get_user_password()
     Presentation.seprarator_between_lines()
@@ -75,7 +82,7 @@ def login_service_after_registration(email: str) -> None:
     password_validation_result = three_times_login_checker(
         "0.0.0.0", "27017", "final_task", email=email
     )
-    if password_validation_result is True:
+    if password_validation_result:
         game_service(email)
     else:
         file_logger.info(
@@ -91,12 +98,13 @@ def login_service() -> None:
     """Funcions checks if email is valid and validates password. If everything is good, redirect to game service else exits system"""
     Presentation.login_introduction()
     Presentation.seprarator_between_lines()
-    email = get_user_email_with_validator()
+    email = get_user_email()
+    # fix here
     Presentation.seprarator_between_lines()
     password_validation_result = three_times_login_checker(
         "0.0.0.0", "27017", "final_task", email=email
     )
-    if password_validation_result is True:
+    if password_validation_result:
         game_service(email)
     else:
         file_logger.info(

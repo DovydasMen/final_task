@@ -1,1 +1,18 @@
-2023-08-12 23:39:59,352 - File logger - INFO - User doesn't provided correct values! Value = n
+2023-08-22 21:36:45,721 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-22 21:36:45,736 - File logger - INFO - Validator rule was set
+2023-08-22 21:36:45,750 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-22 21:36:45,766 - File logger - INFO - Validator rule was set
+2023-08-22 21:38:26,641 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-22 21:38:26,668 - File logger - INFO - Validator rule was set
+2023-08-22 21:38:26,694 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-22 21:38:26,722 - File logger - INFO - Validator rule was set
+2023-08-22 21:40:49,905 - File logger - INFO - There was query to our db for d@D.LT!
+2023-08-22 21:41:20,204 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64e501314d40d72109454338, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-22 21:41:29,073 - File logger - CRITICAL - There is issues with db, there should be log upper!
+2023-08-22 21:42:29,660 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-22 21:42:29,679 - File logger - INFO - Validator rule was set
+2023-08-22 21:42:29,698 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-22 21:42:29,716 - File logger - INFO - Validator rule was set
+2023-08-22 21:44:19,445 - File logger - INFO - There was query to our db for viras@virekose.lt!
+2023-08-22 21:44:49,744 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64e50203f4ff36d9cad2d6eb, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
+2023-08-22 21:44:56,052 - File logger - CRITICAL - There is issues with db, there should be log upper!
