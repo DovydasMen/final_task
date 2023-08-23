@@ -36,7 +36,7 @@ def register_service() -> None:
                 file_logger.info(f"{email} is already in use!")
                 Presentation.email_is_already_in_use()
                 continue
-            elif not db_response:
+            elif db_response == None:
                 console_logger.info(
                     "We encountered unexpected error. Try latter! Exiting the program!"
                 )
@@ -47,6 +47,7 @@ def register_service() -> None:
             else:
                 break
         else:
+            file_logger.info("User have provided bad email.")
             console_logger.info(f"Please provide valid email!")
             continue
     Presentation.seprarator_between_lines()
@@ -65,12 +66,14 @@ def register_service() -> None:
         )
         if result != None:
             console_logger.info(f"You have successfully registered account!")
+            file_logger.info(f" User {result} created.")
             login_service_after_registration(email)
         else:
+            file_logger.warning("Connection to db was lost!")
             console_logger.info(
-                "We have encountered some kind of troubles! We are redirecting you to registration form!"
+                "We have encountered some kind of troubles! We are redirecting you to main menu!"
             )
-            register_service()
+            app_run()
     else:
         register_service()
 
@@ -98,8 +101,14 @@ def login_service() -> None:
     """Funcions checks if email is valid and validates password. If everything is good, redirect to game service else exits system"""
     Presentation.login_introduction()
     Presentation.seprarator_between_lines()
-    email = get_user_email()
-    # fix here
+    while True:
+        email = get_user_email()
+        if is_email_valid(email):
+            break
+        else:
+            file_logger.info("User have provided bad email.")
+            console_logger.info(f"Please provide valid email!")
+            continue
     Presentation.seprarator_between_lines()
     password_validation_result = three_times_login_checker(
         "0.0.0.0", "27017", "final_task", email=email

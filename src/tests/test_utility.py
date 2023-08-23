@@ -1,14 +1,14 @@
 import unittest
-from unittest import mock
 from unittest.mock import patch
 from utility import (
     get_user_option,
     get_user_name,
-    get_user_email_with_validator,
+    get_user_email,
     get_user_password,
     hash_user_password,
     get_y_n_value,
     get_letter,
+    is_email_valid,
 )
 
 
@@ -24,8 +24,8 @@ class TestUtility(unittest.TestCase):
         self.assertEqual(result, "Name")
 
     @patch("builtins.input", return_value="d@d.lt")
-    def test_get_user_email_with_validator(self, mock_input):
-        result = get_user_email_with_validator()
+    def test_get_user_email(self, mock_input):
+        result = get_user_email()
         self.assertEqual(result, "d@d.lt")
 
     @patch("builtins.input", return_value="password")
@@ -36,6 +36,12 @@ class TestUtility(unittest.TestCase):
     def test_hash_user_password(self):
         result = hash_user_password("password")
         self.assertEqual(result, "passwordwhysoserious?")
+
+    def test_is_email_valid(self):
+        result_one = is_email_valid("d@d.lt")
+        result_two = is_email_valid("123")
+        self.assertEqual(result_one, True)
+        self.assertEqual(result_two, False)
 
     @patch("builtins.input", return_value="y")
     def test_get_y_value(self, mock_input):
