@@ -1,19 +1,21 @@
 # pylint: skip-file
+from abc import ABC, abstractmethod
+from random import randint
+from typing import Any, Dict, List, Optional, Union
+
 from pymongo import MongoClient
 from pymongo.cursor import Cursor
 from pymongo.errors import (
     CollectionInvalid,
-    PyMongoError,
     ConnectionFailure,
-    WriteError,
     OperationFailure,
+    PyMongoError,
+    WriteError,
 )
-from abc import ABC, abstractmethod
-from typing import List, Dict, Any, Optional
+from random_word import RandomWords
+
 from loggers.log_to_console import console_logger
 from loggers.log_to_file import file_logger
-from random_word import RandomWords
-from random import randint
 
 
 class DbConnection(ABC):
@@ -57,6 +59,7 @@ class Base(DbConnection):
         self.database_name = database_name
 
     def create_collection(self, collection_name: str) -> bool:
+        """Method is used to create collection to Db"""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -74,6 +77,7 @@ class Base(DbConnection):
             return False
 
     def create_words_for_game(self, collection_name: str) -> None:
+        """Method is use to generate random entries(words) to db ussing random_word library"""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -96,6 +100,7 @@ class Base(DbConnection):
             return
 
     def drop_collection(self, collection_name: str) -> None:
+        """Method is used to drop collection from Db."""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -111,6 +116,7 @@ class Base(DbConnection):
     def create_user(
         self, collection_name: str, name: str, email: str, password: str
     ) -> Optional[str]:
+        """Method is used to create user entry to db. Need to get collection name as string, name as string, email as string, password as string"""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -127,15 +133,16 @@ class Base(DbConnection):
             file_logger.info(
                 f"We faced error while creating user! {str(e).capitalize()}"
             )
-            return None
+            return
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return None
+            return
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return None
+            return
 
     def is_email_used(self, collection_name: str, email: str) -> Optional[bool]:
+        """Method checks if email is unused. Query for user by email."""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -147,14 +154,15 @@ class Base(DbConnection):
             return False
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return None
+            return
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return None
+            return
 
     def check_login(
         self, collection_name: str, email: str, password: str
-    ) -> Optional[bool]:
+    ) -> Optional[Union[str, bool]]:
+        """Method checks if provided credentials is same as in db"""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -162,17 +170,23 @@ class Base(DbConnection):
             file_logger.info(f"There was query to our db for {email}!")
             query = {"email": {"$eq": email}}
             result = collection.find_one(query)
-            if result["email"] == email and result["password"] == password:
-                return True
-            return False
+            if result == None:
+                file_logger.info("We don't have such account in our system!")
+                return ""
+            else:
+                if result["email"] == email and result["password"] == password:
+                    return True
+                else:
+                    return False
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return None
+            return
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return None
+            return
 
     def get_user(self, collection_name: str, email: str) -> Optional[Dict[str, Any]]:
+        """Method returns user."""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -183,12 +197,13 @@ class Base(DbConnection):
             return result
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return None
+            return
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return None
+            return
 
     def get_random_word(self, collection_name: str) -> Optional[str]:
+        """Method returs random word as a string."""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -199,10 +214,10 @@ class Base(DbConnection):
             return str(result["word"]).upper()
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return None
+            return
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return None
+            return
 
     def add_game(
         self,
@@ -214,6 +229,7 @@ class Base(DbConnection):
         letters_left: List[str],
         game_status: bool,
     ) -> Optional[str]:
+        """Method add game to db with it's options."""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -233,15 +249,16 @@ class Base(DbConnection):
             file_logger.info(
                 f"We faced error while creating Game! {str(e).capitalize()}"
             )
-            return None
+            return
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return None
+            return
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return None
+            return
 
     def get_all_games(self, collection_name: str, user_id: str) -> Optional[Cursor]:
+        """Method returns all games as a MongoDb object Cursor."""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]
@@ -254,10 +271,10 @@ class Base(DbConnection):
             return result
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return None
+            return
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return None
+            return
 
 
 class MongoDB(Base):
@@ -270,6 +287,7 @@ class MongoDB(Base):
     def set_up_schema_validator(
         self, collection_name: str, validator_rule: Dict[str, Any]
     ) -> Optional[bool]:
+        """Method is used to set up validator schemas."""
         try:
             client: MongoClient = MongoClient(f"mongodb://{self.host}:{self.port}")
             db = client[self.database_name]

@@ -1,4 +1,6 @@
+# pylint: skip-file
 import unittest
+
 from game_layer import Game
 
 

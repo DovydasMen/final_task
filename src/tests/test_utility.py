@@ -1,15 +1,10 @@
+# pylint: skip-file
 import unittest
 from unittest.mock import patch
-from utility import (
-    get_user_option,
-    get_user_name,
-    get_user_email,
-    get_user_password,
-    hash_user_password,
-    get_y_n_value,
-    get_letter,
-    is_email_valid,
-)
+
+from utility import (get_letter, get_user_email, get_user_name,
+                     get_user_option, get_user_password, get_y_n_value,
+                     hash_user_password, is_email_valid)
 
 
 class TestUtility(unittest.TestCase):

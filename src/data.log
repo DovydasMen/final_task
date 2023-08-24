@@ -1,64 +1,11 @@
-2023-08-22 20:08:11,247 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-22 20:08:11,260 - File logger - INFO - Validator rule was set
-2023-08-22 20:08:11,270 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-22 20:08:11,279 - File logger - INFO - Validator rule was set
-2023-08-22 20:08:18,993 - File logger - INFO - There was query to our db for d@d.lt!
-2023-08-22 20:08:19,007 - File logger - INFO - There was query to our db for d@d.lt!
-2023-08-22 20:08:20,098 - File logger - INFO - Collection words was created!
-2023-08-22 20:08:20,111 - File logger - INFO - Validator rule was set
-2023-08-22 20:09:09,933 - File logger - INFO - Game with id - 64e4ebb5dcc3821785301d76 was created.
-2023-08-22 20:09:09,945 - File logger - INFO - Collection words was droped/deleted!
-2023-08-22 20:09:09,947 - File logger - INFO - There was query to our db for games according to user_id: 64e3ab2bf7afe1a9de1dfbee!
-2023-08-22 21:24:30,951 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-22 21:24:30,962 - File logger - INFO - Validator rule was set
-2023-08-22 21:24:30,971 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-22 21:24:30,979 - File logger - INFO - Validator rule was set
-2023-08-22 21:24:49,453 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-22 21:24:49,462 - File logger - INFO - Validator rule was set
-2023-08-22 21:24:49,471 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-22 21:24:49,482 - File logger - INFO - Validator rule was set
-2023-08-22 21:24:58,096 - File logger - INFO - There was query to our db for ge@ge.lt!
-2023-08-22 21:25:02,460 - File logger - INFO - User with id - 64e4fd7eab56b77b6eacba62 was created.
-2023-08-22 21:25:05,812 - File logger - INFO - There was query to our db for ge@ge.lt!
-2023-08-22 21:25:05,825 - File logger - INFO - There was query to our db for ge@ge.lt!
-2023-08-22 21:29:26,622 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-22 21:29:26,633 - File logger - INFO - Validator rule was set
-2023-08-22 21:29:26,641 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-22 21:29:26,650 - File logger - INFO - Validator rule was set
-2023-08-22 21:30:46,136 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-22 21:30:46,146 - File logger - INFO - Validator rule was set
-2023-08-22 21:30:46,156 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-22 21:30:46,166 - File logger - INFO - Validator rule was set
-2023-08-22 21:35:21,504 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-22 21:35:21,515 - File logger - INFO - Validator rule was set
-2023-08-22 21:35:21,525 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-22 21:35:21,536 - File logger - INFO - Validator rule was set
-2023-08-23 14:35:17,171 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-23 14:35:17,183 - File logger - INFO - Validator rule was set
-2023-08-23 14:35:17,194 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-23 14:35:17,205 - File logger - INFO - Validator rule was set
-2023-08-23 14:35:55,846 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-23 14:35:55,855 - File logger - INFO - Validator rule was set
-2023-08-23 14:35:55,863 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-23 14:35:55,872 - File logger - INFO - Validator rule was set
-2023-08-23 14:36:05,919 - File logger - INFO - There was query to our db for d@d.lt!
-2023-08-23 14:36:05,937 - File logger - INFO - There was query to our db for d@d.lt!
-2023-08-23 14:47:44,403 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-23 14:47:44,413 - File logger - INFO - Validator rule was set
-2023-08-23 14:47:44,421 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-23 14:47:44,429 - File logger - INFO - Validator rule was set
-2023-08-23 14:47:56,709 - File logger - INFO - There was query to our db for nee@nee.lt!
-2023-08-23 14:47:56,721 - File logger - CRITICAL - There is issues with db, there should be log upper!
-2023-08-23 14:48:24,026 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-23 14:48:24,035 - File logger - INFO - Validator rule was set
-2023-08-23 14:48:24,043 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-23 14:48:24,052 - File logger - INFO - Validator rule was set
-2023-08-23 14:48:32,618 - File logger - INFO - There was query to our db for jo@jo.lt!
-2023-08-23 14:48:32,629 - File logger - CRITICAL - There is issues with db, there should be log upper!
-2023-08-23 14:51:44,794 - File logger - INFO - Collection is not created as expected! Collection users already exists!
-2023-08-23 14:51:44,804 - File logger - INFO - Validator rule was set
-2023-08-23 14:51:44,812 - File logger - INFO - Collection is not created as expected! Collection games already exists!
-2023-08-23 14:51:44,821 - File logger - INFO - Validator rule was set
-2023-08-23 14:53:41,179 - File logger - INFO - There was query to our db for gaid@gaid.lt!
-2023-08-23 14:54:38,409 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 61] connection refused, timeout: 30s, topology description: <topologydescription id: 64e5f360548cd247b0b53fa7, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 61] connection refused')>]>
-2023-08-23 14:54:38,410 - File logger - WARNING - Connection to db was lost!
+2023-08-24 16:54:33,857 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-24 16:54:33,866 - File logger - INFO - Validator rule was set
+2023-08-24 16:54:33,879 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-24 16:54:33,887 - File logger - INFO - Validator rule was set
+2023-08-24 16:54:43,344 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-24 16:54:43,360 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-24 16:54:44,608 - File logger - INFO - Collection words was created!
+2023-08-24 16:54:44,620 - File logger - INFO - Validator rule was set
+2023-08-24 16:55:19,661 - File logger - INFO - Game with id - 64e78b779971da1a36c11db1 was created.
+2023-08-24 16:55:19,675 - File logger - INFO - Collection words was droped/deleted!
+2023-08-24 16:55:19,685 - File logger - INFO - There was query to our db for games according to user_id: 64e3ab2bf7afe1a9de1dfbee!

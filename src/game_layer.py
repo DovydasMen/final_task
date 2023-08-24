@@ -5,6 +5,8 @@ from loggers.log_to_console import console_logger
 
 
 class Game:
+    """To initialize class, need to provide user id and word."""
+
     def __init__(self, user_id: str, word: str) -> None:
         self.user_id = user_id
         self._word = word
@@ -42,19 +44,24 @@ class Game:
         self.guessing_word = []
 
     def get_word(self) -> Optional[str]:
+        """Method returns private attribute"""
         return self._word
 
     def fill_guessing_word_with_special_char(self) -> None:
+        """Method makes private attribute into the list filled with special char."""
         for number in range(len(self._word)):
             self.guessing_word.insert(number, "_")
 
     def take_life_away(self) -> None:
+        """Method is used to take life away if letter wasn't correct"""
         self.lives_left -= 1
 
     def get_lifes_count(self) -> int:
+        """Method returs lifes count"""
         return int(self.lives_left)
 
     def accept_letter_for_game(self, letter: str) -> None:
+        """Method accepts a letter in capital, then goes throught the algorithm to set all attributes."""
         counter = 0
         if letter in self._word:
             try:
@@ -86,18 +93,22 @@ class Game:
                 self.take_life_away()
 
     def get_left_letters(self) -> List[str]:
+        """Method returs list with all letters which is still unused."""
         return self.letters_left
 
     def get_incorrect_guesed_letters(self) -> List[str]:
+        """Method returs a list of incorrect guessed letters"""
         return self.guesed_letters
 
     def get_game_status(self) -> bool:
+        """Method returs bool value according to game state."""
         if self.lives_left > 0 and "_" not in self.guessing_word:
             return True
         else:
             return False
 
     def get_guessing_word(self) -> List[str]:
+        """Method returs list of letters of guessing word."""
         return self.guessing_word
 
 

@@ -1,25 +1,26 @@
 # pylint: skip-file
+from sys import exit
+
+from db_layer import MongoDB
+from game_layer import Game
+from json_schemas import (
+    games_validation_rules,
+    user_validation_rules,
+    word_validation_rules,
+)
+from loggers.log_to_console import console_logger
+from loggers.log_to_file import file_logger
 from presentation_layer import Presentation
 from utility import (
-    get_user_option,
-    get_user_name,
+    get_letter,
     get_user_email,
+    get_user_name,
+    get_user_option,
     get_user_password,
     get_y_n_value,
     hash_user_password,
-    three_times_login_checker,
-    get_letter,
     is_email_valid,
-)
-from db_layer import MongoDB
-from sys import exit
-from loggers.log_to_console import console_logger
-from loggers.log_to_file import file_logger
-from game_layer import Game
-from json_schemas import (
-    user_validation_rules,
-    games_validation_rules,
-    word_validation_rules,
+    three_times_login_checker,
 )
 
 
@@ -111,8 +112,14 @@ def login_service() -> None:
             continue
     Presentation.seprarator_between_lines()
     password_validation_result = three_times_login_checker(
-        "0.0.0.0", "27017", "final_task", email=email
+        "172.17.0.2", "27017", "final_task", email=email
     )
+    if password_validation_result == "":
+        console_logger.info(
+            "We don't have such account in our system! Please register an account!"
+        )
+        register_service()
+
     if password_validation_result:
         game_service(email)
     else:
@@ -253,7 +260,7 @@ def app_run() -> None:
 
 
 if __name__ == "__main__":
-    db = MongoDB("0.0.0.0", "27017", "final_task")
+    db = MongoDB("172.17.0.2", "27017", "final_task")
     db.create_collection("users")
     if db.set_up_schema_validator("users", user_validation_rules) is None:
         file_logger.warning(

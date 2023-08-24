@@ -1,13 +1,14 @@
 # pylint: skip-file
+import re
+from typing import Optional, Union
+
+from db_layer import MongoDB
 from loggers.log_to_console import console_logger
 from loggers.log_to_file import file_logger
-from db_layer import MongoDB
-from typing import Optional
-
-import re
 
 
 def get_user_option() -> int:
+    """Funcion returns values only from 1 to 3, other options is not valid."""
     while True:
         try:
             selection = int(input("Your selection: "))
@@ -27,6 +28,7 @@ def get_user_option() -> int:
 
 
 def get_user_name() -> str:
+    """Function returs user name as a string."""
     while True:
         try:
             user_name = input("Name: ").rstrip().lstrip()
@@ -40,6 +42,7 @@ def get_user_name() -> str:
 
 
 def get_user_email() -> str:
+    """Function returs email as a string"""
     while True:
         try:
             user_email = input("Email: ").rstrip().lstrip()
@@ -53,6 +56,7 @@ def get_user_email() -> str:
 
 
 def is_email_valid(user_email: str) -> bool:
+    """Function returs bool value, for email validation there is used regex expresion."""
     regex = re.compile(
         r"([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+"
     )
@@ -62,6 +66,7 @@ def is_email_valid(user_email: str) -> bool:
 
 
 def get_user_password() -> str:
+    """Function returs users password as a string."""
     while True:
         try:
             user_password = input("Password: ").rstrip().lstrip()
@@ -75,11 +80,13 @@ def get_user_password() -> str:
 
 
 def hash_user_password(password: str) -> str:
+    """Function hashes password."""
     hashed_password = password + "whysoserious?"
     return hashed_password
 
 
-def get_y_n_value():
+def get_y_n_value() -> str:
+    """Funcion returs only y or n as a string value."""
     while True:
         try:
             y_n_value = input("Your selection: ").rstrip().lstrip().lower()
@@ -106,7 +113,8 @@ def get_y_n_value():
 
 def three_times_login_checker(
     host: str, port: str, database_name: str, email: str
-) -> Optional[bool]:
+) -> Optional[Union[str, bool]]:
+    """Function chechks if password and provided email is correct withing the values in db."""
     db = MongoDB(host=host, port=port, database_name=database_name)
     max_tries = 3
     tries = 0
@@ -118,6 +126,9 @@ def three_times_login_checker(
             tries += 1
             console_logger.info("You have provided bad password!")
             continue
+        elif db_response == "":
+            file_logger.info("We don't have such account in our system!")
+            return ""
         elif db_response == None:
             console_logger.info(
                 "We encountered unexpected error. Try latter! Exiting the program!"
@@ -130,9 +141,9 @@ def three_times_login_checker(
 
 
 def get_letter() -> str:
+    """Functions returs letters as a string. Letter is going to be upper cased."""
     while True:
         try:
-            # is alpha!
             letter = input("Please type letter: ").rstrip().lstrip().upper()
             if len(letter) > 1:
                 print("You have entered more than 1 symbol!")
