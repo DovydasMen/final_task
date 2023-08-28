@@ -4,7 +4,7 @@ Hangman is a word guessing game. After correct letter guessed it shows up in a c
 
 # Getting started
 
-First of all, you should have Python and Docker installed on your machine. This project was projected to work fully on Docker containers. There is possibility to play it on local machine after Git cloning aswell but Docker Mongo db container still neededs to be. 
+First of all, you should have Python 3.11.3 and Docker installed on your machine. This project was projected to work fully on Docker containers. There is possibility to play it on local machine after Git cloning aswell but Docker Mongo db container still neededs to be. 
 
 #   Installation
 1. Pull source code from Git repository.
