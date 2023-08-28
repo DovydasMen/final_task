@@ -5,13 +5,8 @@ from typing import Any, Dict, List, Optional, Union
 
 from pymongo import MongoClient
 from pymongo.cursor import Cursor
-from pymongo.errors import (
-    CollectionInvalid,
-    ConnectionFailure,
-    OperationFailure,
-    PyMongoError,
-    WriteError,
-)
+from pymongo.errors import (CollectionInvalid, ConnectionFailure,
+                            OperationFailure, PyMongoError, WriteError)
 from random_word import RandomWords
 
 from loggers.log_to_console import console_logger

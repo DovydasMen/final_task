@@ -1,6 +1,7 @@
 # pylint: skip-file
+from typing import List, Optional
+
 from db_layer import MongoClient
-from typing import Optional, List
 from loggers.log_to_console import console_logger
 
 

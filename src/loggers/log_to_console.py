@@ -1,7 +1,5 @@
 import logging
-
-from logging import StreamHandler
-from logging import Formatter
+from logging import Formatter, StreamHandler
 
 LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 LOG_LEVEL = logging.INFO

@@ -9,3 +9,96 @@
 2023-08-24 16:55:19,661 - File logger - INFO - Game with id - 64e78b779971da1a36c11db1 was created.
 2023-08-24 16:55:19,675 - File logger - INFO - Collection words was droped/deleted!
 2023-08-24 16:55:19,685 - File logger - INFO - There was query to our db for games according to user_id: 64e3ab2bf7afe1a9de1dfbee!
+2023-08-28 06:07:17,541 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 06:07:17,550 - File logger - INFO - Validator rule was set
+2023-08-28 06:07:17,556 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 06:07:17,562 - File logger - INFO - Validator rule was set
+2023-08-28 06:07:42,799 - File logger - INFO - There was query to our db for ie@ie.lt!
+2023-08-28 06:07:46,433 - File logger - INFO - User with id - 64ec39b2427551f6a1bf0979 was created.
+2023-08-28 06:07:46,435 - File logger - INFO -  User 64ec39b2427551f6a1bf0979 created.
+2023-08-28 06:07:50,766 - File logger - INFO - There was query to our db for ie@ie.lt!
+2023-08-28 06:08:20,855 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 111] connection refused, timeout: 30s, topology description: <topologydescription id: 64ec39b6427551f6a1bf097a, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 111] connection refused')>]>
+2023-08-28 06:08:20,859 - File logger - CRITICAL - There is issues with db, there should be log upper!
+2023-08-28 06:08:27,137 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 06:08:27,145 - File logger - INFO - Validator rule was set
+2023-08-28 06:08:27,151 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 06:08:27,158 - File logger - INFO - Validator rule was set
+2023-08-28 06:08:37,733 - File logger - INFO - There was query to our db for gied@gied.lt!
+2023-08-28 06:08:40,594 - File logger - INFO - User with id - 64ec39e8043c13d882dde5ee was created.
+2023-08-28 06:08:40,602 - File logger - INFO -  User 64ec39e8043c13d882dde5ee created.
+2023-08-28 06:08:46,051 - File logger - INFO - There was query to our db for gied@gied.lt!
+2023-08-28 06:09:16,135 - File logger - INFO - Connection to db was lost! 0.0.0.0:27017: [errno 111] connection refused, timeout: 30s, topology description: <topologydescription id: 64ec39ee043c13d882dde5ef, topology_type: unknown, servers: [<serverdescription ('0.0.0.0', 27017) server_type: unknown, rtt: none, error=autoreconnect('0.0.0.0:27017: [errno 111] connection refused')>]>
+2023-08-28 06:09:16,143 - File logger - CRITICAL - There is issues with db, there should be log upper!
+2023-08-28 06:11:01,803 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 06:11:01,814 - File logger - INFO - Validator rule was set
+2023-08-28 06:11:01,823 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 06:11:01,835 - File logger - INFO - Validator rule was set
+2023-08-28 06:11:17,528 - File logger - INFO - There was query to our db for vejas@plaukus.suvele!
+2023-08-28 06:11:23,191 - File logger - INFO - User with id - 64ec3a8b6b32d121b1da5a5c was created.
+2023-08-28 06:11:23,193 - File logger - INFO -  User 64ec3a8b6b32d121b1da5a5c created.
+2023-08-28 06:11:25,282 - File logger - INFO - There was query to our db for vejas@plaukus.suvele!
+2023-08-28 06:11:25,289 - File logger - INFO - There was query to our db for vejas@plaukus.suvele!
+2023-08-28 06:11:27,183 - File logger - INFO - Collection words was created!
+2023-08-28 06:11:27,191 - File logger - INFO - Validator rule was set
+2023-08-28 06:14:37,815 - File logger - INFO - Game with id - 64ec3b4d6b32d121b1da5a96 was created.
+2023-08-28 06:14:37,823 - File logger - INFO - Collection words was droped/deleted!
+2023-08-28 06:14:37,827 - File logger - INFO - There was query to our db for games according to user_id: 64ec3a8b6b32d121b1da5a5c!
+2023-08-28 06:14:42,437 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 06:14:42,446 - File logger - INFO - Validator rule was set
+2023-08-28 06:14:42,453 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 06:14:42,460 - File logger - INFO - Validator rule was set
+2023-08-28 06:14:53,584 - File logger - INFO - User have provided bad email.
+2023-08-28 06:14:54,551 - File logger - INFO - User have provided bad email.
+2023-08-28 06:14:57,972 - File logger - INFO - User have provided bad email.
+2023-08-28 06:15:02,609 - File logger - INFO - There was query to our db for a@s.lt!
+2023-08-28 06:15:05,390 - File logger - INFO - User with id - 64ec3b690d456c1d57d16bf6 was created.
+2023-08-28 06:15:05,392 - File logger - INFO -  User 64ec3b690d456c1d57d16bf6 created.
+2023-08-28 06:15:07,460 - File logger - INFO - There was query to our db for a@s.lt!
+2023-08-28 06:15:07,466 - File logger - INFO - There was query to our db for a@s.lt!
+2023-08-28 06:15:13,470 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 06:15:13,478 - File logger - INFO - Validator rule was set
+2023-08-28 06:15:13,485 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 06:15:13,492 - File logger - INFO - Validator rule was set
+2023-08-28 06:15:21,478 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 06:15:21,485 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 06:15:23,777 - File logger - INFO - Collection words was created!
+2023-08-28 06:15:23,786 - File logger - INFO - Validator rule was set
+2023-08-28 06:15:56,523 - File logger - INFO - Game with id - 64ec3b9c8cdca8d31e450377 was created.
+2023-08-28 06:15:56,532 - File logger - INFO - Collection words was droped/deleted!
+2023-08-28 06:15:56,537 - File logger - INFO - There was query to our db for games according to user_id: 64e3ab2bf7afe1a9de1dfbee!
+2023-08-28 06:16:00,369 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 06:16:00,377 - File logger - INFO - Validator rule was set
+2023-08-28 06:16:00,384 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 06:16:00,391 - File logger - INFO - Validator rule was set
+2023-08-28 06:16:07,387 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 06:16:07,393 - File logger - INFO - d@d.lt is already in use!
+2023-08-28 06:16:14,294 - File logger - INFO - There was query to our db for j@j.lt!
+2023-08-28 06:16:14,298 - File logger - INFO - j@j.lt is already in use!
+2023-08-28 06:16:19,246 - File logger - INFO - User have provided bad email.
+2023-08-28 06:19:12,918 - File logger - INFO - User have provided bad email.
+2023-08-28 06:20:38,513 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 06:20:38,528 - File logger - INFO - Validator rule was set
+2023-08-28 06:20:38,544 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 06:20:38,557 - File logger - INFO - Validator rule was set
+2023-08-28 06:20:51,492 - File logger - INFO - User have provided bad email.
+2023-08-28 06:20:55,521 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 06:20:55,528 - File logger - INFO - d@d.lt is already in use!
+2023-08-28 06:21:06,086 - File logger - INFO - There was query to our db for rrrr@rrrr.lt!
+2023-08-28 06:21:17,714 - File logger - INFO - User have provided bad email.
+2023-08-28 06:21:21,475 - File logger - INFO - There was query to our db for l@l.lt!
+2023-08-28 06:21:24,863 - File logger - INFO - User with id - 64ec3ce413dc15c7e75cb026 was created.
+2023-08-28 06:21:24,864 - File logger - INFO -  User 64ec3ce413dc15c7e75cb026 created.
+2023-08-28 06:21:27,245 - File logger - INFO - There was query to our db for l@l.lt!
+2023-08-28 06:21:27,252 - File logger - INFO - There was query to our db for l@l.lt!
+2023-08-28 06:21:34,125 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 06:21:34,133 - File logger - INFO - Validator rule was set
+2023-08-28 06:21:34,140 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 06:21:34,146 - File logger - INFO - Validator rule was set
+2023-08-28 06:21:46,621 - File logger - INFO - There was query to our db for f@f.lt!
+2023-08-28 06:21:57,892 - File logger - INFO - There was query to our db for fff@fff.lt!
+2023-08-28 06:22:01,340 - File logger - INFO - User with id - 64ec3d09250de67b2c9b7ecc was created.
+2023-08-28 06:22:01,342 - File logger - INFO -  User 64ec3d09250de67b2c9b7ecc created.
+2023-08-28 06:22:04,050 - File logger - INFO - There was query to our db for fff@fff.lt!
+2023-08-28 06:22:06,816 - File logger - INFO - There was query to our db for fff@fff.lt!
+2023-08-28 06:22:08,128 - File logger - INFO - There was query to our db for fff@fff.lt!
+2023-08-28 06:22:08,134 - File logger - INFO - User provided bad pasword for three times. System shuts down!

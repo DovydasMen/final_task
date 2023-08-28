@@ -1,4 +1,5 @@
 from typing import Any, Dict, List
+from loggers.log_to_console import console_logger
 
 
 class Presentation:
@@ -37,7 +38,9 @@ class Presentation:
 
     @staticmethod
     def email_is_already_in_use() -> None:
-        print("Please provide diffrent email! This one is already in use!")
+        console_logger.info(
+            "Please provide diffrent email! This one is already in use!"
+        )
 
     @staticmethod
     def is_all_information_correct() -> None:

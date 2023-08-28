@@ -84,7 +84,7 @@ def login_service_after_registration(email: str) -> None:
     Presentation.seprarator_between_lines()
     Presentation.show_user_email(email=email)
     password_validation_result = three_times_login_checker(
-        "0.0.0.0", "27017", "final_task", email=email
+        "172.17.0.2", "27017", "final_task", email=email
     )
     if password_validation_result:
         game_service(email)
