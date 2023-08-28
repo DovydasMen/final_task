@@ -102,3 +102,145 @@
 2023-08-28 06:22:06,816 - File logger - INFO - There was query to our db for fff@fff.lt!
 2023-08-28 06:22:08,128 - File logger - INFO - There was query to our db for fff@fff.lt!
 2023-08-28 06:22:08,134 - File logger - INFO - User provided bad pasword for three times. System shuts down!
+2023-08-28 09:56:47,304 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 09:56:47,314 - File logger - INFO - Validator rule was set
+2023-08-28 09:56:47,321 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 09:56:47,328 - File logger - INFO - Validator rule was set
+2023-08-28 09:57:03,247 - File logger - INFO - There was query to our db for asd@asd.lt!
+2023-08-28 09:57:06,001 - File logger - INFO - User doesn't provided correct values! Value = 1
+2023-08-28 09:57:07,795 - File logger - INFO - User with id - 64ec6f73908f43db5a316dfc was created.
+2023-08-28 09:57:07,797 - File logger - INFO -  User 64ec6f73908f43db5a316dfc created.
+2023-08-28 09:57:09,623 - File logger - INFO - There was query to our db for asd@asd.lt!
+2023-08-28 09:57:09,629 - File logger - INFO - There was query to our db for asd@asd.lt!
+2023-08-28 09:57:10,984 - File logger - INFO - User written wrong value input!
+2023-08-28 09:57:19,692 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 09:57:19,701 - File logger - INFO - Validator rule was set
+2023-08-28 09:57:19,708 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 09:57:19,715 - File logger - INFO - Validator rule was set
+2023-08-28 09:57:30,419 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 09:57:30,428 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 09:57:32,067 - File logger - INFO - Collection words was created!
+2023-08-28 09:57:32,077 - File logger - INFO - Validator rule was set
+2023-08-28 09:58:54,978 - File logger - INFO - Game with id - 64ec6fde2c17864c7772cb81 was created.
+2023-08-28 09:58:54,989 - File logger - INFO - Collection words was droped/deleted!
+2023-08-28 09:58:54,992 - File logger - INFO - There was query to our db for games according to user_id: 64e3ab2bf7afe1a9de1dfbee!
+2023-08-28 09:59:01,542 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 09:59:01,550 - File logger - INFO - Validator rule was set
+2023-08-28 09:59:01,555 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 09:59:01,564 - File logger - INFO - Validator rule was set
+2023-08-28 09:59:05,395 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:12,390 - File logger - INFO - There was query to our db for d@2d.lt!
+2023-08-28 09:59:12,395 - File logger - INFO - We don't have such account in our system!
+2023-08-28 09:59:12,397 - File logger - INFO - We don't have such account in our system!
+2023-08-28 09:59:19,388 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:21,921 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:22,979 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:23,755 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:25,454 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:26,882 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:29,335 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:31,889 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:33,699 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:34,249 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:34,650 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:34,983 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:35,332 - File logger - INFO - User have provided bad email.
+2023-08-28 09:59:39,080 - File logger - INFO - There was query to our db for d@dddd.lt!
+2023-08-28 09:59:42,910 - File logger - INFO - User with id - 64ec700e39fae37533e646ea was created.
+2023-08-28 09:59:42,912 - File logger - INFO -  User 64ec700e39fae37533e646ea created.
+2023-08-28 09:59:44,110 - File logger - INFO - There was query to our db for d@dddd.lt!
+2023-08-28 09:59:44,118 - File logger - INFO - There was query to our db for d@dddd.lt!
+2023-08-28 09:59:46,729 - File logger - INFO - There was query to our db for games according to user_id: 64ec700e39fae37533e646ea!
+2023-08-28 09:59:46,735 - File logger - INFO - User provided bad pasword for three times. System shuts down!
+2023-08-28 10:00:46,409 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 10:00:46,418 - File logger - INFO - Validator rule was set
+2023-08-28 10:00:46,424 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 10:00:46,431 - File logger - INFO - Validator rule was set
+2023-08-28 10:00:56,108 - File logger - INFO - There was query to our db for vaflis@vaflis.lt!
+2023-08-28 10:00:58,780 - File logger - INFO - User with id - 64ec705adf54a5dd646e888e was created.
+2023-08-28 10:00:58,782 - File logger - INFO -  User 64ec705adf54a5dd646e888e created.
+2023-08-28 10:01:00,282 - File logger - INFO - There was query to our db for vaflis@vaflis.lt!
+2023-08-28 10:01:00,289 - File logger - INFO - There was query to our db for vaflis@vaflis.lt!
+2023-08-28 10:01:02,273 - File logger - INFO - There was query to our db for games according to user_id: 64ec705adf54a5dd646e888e!
+2023-08-28 10:05:42,483 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 10:05:42,495 - File logger - INFO - Validator rule was set
+2023-08-28 10:05:42,501 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 10:05:42,509 - File logger - INFO - Validator rule was set
+2023-08-28 10:06:01,727 - File logger - INFO - There was query to our db for nu@pagadi.lt!
+2023-08-28 10:06:04,959 - File logger - INFO - User with id - 64ec718cf20cd2b89c32f973 was created.
+2023-08-28 10:06:04,961 - File logger - INFO -  User 64ec718cf20cd2b89c32f973 created.
+2023-08-28 10:06:06,811 - File logger - INFO - There was query to our db for nu@pagadi.lt!
+2023-08-28 10:06:06,818 - File logger - INFO - There was query to our db for nu@pagadi.lt!
+2023-08-28 10:06:07,858 - File logger - INFO - There was query to our db for games according to user_id: 64ec718cf20cd2b89c32f973!
+2023-08-28 10:09:25,042 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 10:09:25,051 - File logger - INFO - Validator rule was set
+2023-08-28 10:09:25,058 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 10:09:25,065 - File logger - INFO - Validator rule was set
+2023-08-28 10:09:38,603 - File logger - INFO - There was query to our db for vaflis@tu.lt!
+2023-08-28 10:09:38,607 - File logger - INFO - We don't have such account in our system!
+2023-08-28 10:09:38,609 - File logger - INFO - We don't have such account in our system!
+2023-08-28 10:09:48,493 - File logger - INFO - There was query to our db for vaflis@tu.lt!
+2023-08-28 10:09:51,422 - File logger - INFO - User with id - 64ec726f4aa9aa8eef3bd0b5 was created.
+2023-08-28 10:09:51,426 - File logger - INFO -  User 64ec726f4aa9aa8eef3bd0b5 created.
+2023-08-28 10:09:52,489 - File logger - INFO - There was query to our db for vaflis@tu.lt!
+2023-08-28 10:09:52,496 - File logger - INFO - There was query to our db for vaflis@tu.lt!
+2023-08-28 10:09:53,376 - File logger - INFO - There was query to our db for games according to user_id: 64ec726f4aa9aa8eef3bd0b5!
+2023-08-28 10:09:53,382 - File logger - INFO - User provided bad pasword for three times. System shuts down!
+2023-08-28 10:10:47,582 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 10:10:47,590 - File logger - INFO - Validator rule was set
+2023-08-28 10:10:47,597 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 10:10:47,604 - File logger - INFO - Validator rule was set
+2023-08-28 10:10:54,649 - File logger - INFO - There was query to our db for vaflis@tu.lt!
+2023-08-28 10:10:54,657 - File logger - INFO - There was query to our db for vaflis@tu.lt!
+2023-08-28 10:10:56,299 - File logger - INFO - There was query to our db for games according to user_id: 64ec726f4aa9aa8eef3bd0b5!
+2023-08-28 10:12:43,724 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 10:12:43,738 - File logger - INFO - Validator rule was set
+2023-08-28 10:12:43,750 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 10:12:43,759 - File logger - INFO - Validator rule was set
+2023-08-28 10:13:10,724 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 10:13:10,733 - File logger - INFO - Validator rule was set
+2023-08-28 10:13:10,739 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 10:13:10,746 - File logger - INFO - Validator rule was set
+2023-08-28 10:13:18,720 - File logger - INFO - There was query to our db for vaflis@tu.lt!
+2023-08-28 10:13:18,726 - File logger - INFO - There was query to our db for vaflis@tu.lt!
+2023-08-28 10:13:20,511 - File logger - INFO - There was query to our db for games according to user_id: 64ec726f4aa9aa8eef3bd0b5!
+2023-08-28 11:59:36,209 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 11:59:36,218 - File logger - INFO - Validator rule was set
+2023-08-28 11:59:36,225 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 11:59:36,231 - File logger - INFO - Validator rule was set
+2023-08-28 11:59:42,031 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 11:59:42,037 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 11:59:43,259 - File logger - INFO - Collection words was created!
+2023-08-28 11:59:43,268 - File logger - INFO - Validator rule was set
+2023-08-28 12:00:50,714 - File logger - INFO - Game with id - 64ec8c725891e3ce5002f21f was created.
+2023-08-28 12:00:50,723 - File logger - INFO - Collection words was droped/deleted!
+2023-08-28 12:00:50,727 - File logger - INFO - There was query to our db for games according to user_id: 64e3ab2bf7afe1a9de1dfbee!
+2023-08-28 12:00:54,820 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 12:00:54,828 - File logger - INFO - Validator rule was set
+2023-08-28 12:00:54,835 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 12:00:54,842 - File logger - INFO - Validator rule was set
+2023-08-28 12:01:01,041 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 12:01:01,047 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 12:01:02,532 - File logger - INFO - There was query to our db for games according to user_id: 64e3ab2bf7afe1a9de1dfbee!
+2023-08-28 12:01:18,730 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 12:01:18,738 - File logger - INFO - Validator rule was set
+2023-08-28 12:01:18,744 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 12:01:18,751 - File logger - INFO - Validator rule was set
+2023-08-28 12:01:24,598 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 12:01:24,606 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 12:01:25,957 - File logger - INFO - Collection words was created!
+2023-08-28 12:01:25,966 - File logger - INFO - Validator rule was set
+2023-08-28 12:02:38,543 - File logger - INFO - Game with id - 64ec8cde15a20c3ed754bec8 was created.
+2023-08-28 12:02:38,551 - File logger - INFO - Collection words was droped/deleted!
+2023-08-28 12:02:38,556 - File logger - INFO - There was query to our db for games according to user_id: 64e3ab2bf7afe1a9de1dfbee!
+2023-08-28 12:02:46,819 - File logger - INFO - Collection is not created as expected! Collection users already exists!
+2023-08-28 12:02:46,827 - File logger - INFO - Validator rule was set
+2023-08-28 12:02:46,834 - File logger - INFO - Collection is not created as expected! Collection games already exists!
+2023-08-28 12:02:46,841 - File logger - INFO - Validator rule was set
+2023-08-28 12:02:54,146 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 12:02:54,153 - File logger - INFO - There was query to our db for d@d.lt!
+2023-08-28 12:03:00,456 - File logger - INFO - Collection words was created!
+2023-08-28 12:03:00,464 - File logger - INFO - Validator rule was set
+2023-08-28 12:04:23,966 - File logger - INFO - Game with id - 64ec8d4782928910cc93b8b2 was created.
+2023-08-28 12:04:23,975 - File logger - INFO - Collection words was droped/deleted!
+2023-08-28 12:04:23,980 - File logger - INFO - There was query to our db for games according to user_id: 64e3ab2bf7afe1a9de1dfbee!

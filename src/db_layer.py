@@ -5,8 +5,13 @@ from typing import Any, Dict, List, Optional, Union
 
 from pymongo import MongoClient
 from pymongo.cursor import Cursor
-from pymongo.errors import (CollectionInvalid, ConnectionFailure,
-                            OperationFailure, PyMongoError, WriteError)
+from pymongo.errors import (
+    CollectionInvalid,
+    ConnectionFailure,
+    OperationFailure,
+    PyMongoError,
+    WriteError,
+)
 from random_word import RandomWords
 
 from loggers.log_to_console import console_logger
@@ -103,10 +108,8 @@ class Base(DbConnection):
             file_logger.info(f"Collection {collection_name} was droped/deleted!")
         except ConnectionFailure as e:
             file_logger.info(f"Connection to db was lost! {str(e).capitalize()}")
-            return
         except PyMongoError as e:
             file_logger.info(f"We occured unxepected error. {str(e).capitalize()}")
-            return
 
     def create_user(
         self, collection_name: str, name: str, email: str, password: str

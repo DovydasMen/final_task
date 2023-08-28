@@ -16,10 +16,12 @@ def get_user_option() -> int:
                 console_logger.info("Please choose values from 1 to 3")
                 continue
         except ValueError:
-            print("Please write numbers!")
+            console_logger.info("Please write numbers!")
             file_logger.info(f"User written wrong value input!")
         except Exception as e:
-            print("We have encountered unexpected error!", str(e), "Try again!")
+            console_logger.info(
+                "We have encountered unexpected error!", str(e), "Try again!"
+            )
             file_logger.info("User written wrong input!")
             continue
         else:
@@ -33,7 +35,9 @@ def get_user_name() -> str:
         try:
             user_name = input("Name: ").rstrip().lstrip()
         except Exception as e:
-            print("We have encountered unexpected error!", str(e), "Try again!")
+            console_logger.info(
+                "We have encountered unexpected error!", str(e), "Try again!"
+            )
             file_logger.info("User written wrong input!")
             continue
         else:
@@ -47,7 +51,9 @@ def get_user_email() -> str:
         try:
             user_email = input("Email: ").rstrip().lstrip()
         except Exception as e:
-            print("We have encountered unexpected error!", str(e), "Try again!")
+            console_logger.info(
+                "We have encountered unexpected error!", str(e), "Try again!"
+            )
             file_logger.info("User written wrong input!")
             continue
         else:
@@ -71,7 +77,9 @@ def get_user_password() -> str:
         try:
             user_password = input("Password: ").rstrip().lstrip()
         except Exception as e:
-            print("We have encountered unexpected error!", str(e), "Try again!")
+            console_logger.info(
+                "We have encountered unexpected error!", str(e), "Try again!"
+            )
             file_logger.info("User written wrong input!")
             continue
         else:
@@ -99,13 +107,15 @@ def get_y_n_value() -> str:
             elif "n" in y_n_value:
                 break
             else:
-                print("Please select Y letter or n letter!")
+                console_logger.info("Please select Y letter or N letter!")
                 file_logger.info(
                     f"User doesn't provided correct values! Value = {y_n_value}"
                 )
                 continue
         except Exception as e:
-            print("We have encountered unexpected error!", str(e), "Try again!")
+            console_logger.info(
+                "We have encountered unexpected error!", str(e), "Try again!"
+            )
             file_logger.info("User written wrong input!")
             continue
     return y_n_value
@@ -146,19 +156,21 @@ def get_letter() -> str:
         try:
             letter = input("Please type letter: ").rstrip().lstrip().upper()
             if len(letter) > 1:
-                print("You have entered more than 1 symbol!")
+                console_logger.info("You have entered more than 1 symbol!")
                 file_logger.info("There was provided more then one symbol!")
                 continue
             elif letter.isalpha():
                 break
             else:
-                print("Please select only letters!")
+                console_logger.info("Please select only letters!")
                 file_logger.info(
                     f"User doesn't provided correct values! Value = {letter}"
                 )
                 continue
         except Exception as e:
-            print("We have encountered unexpected error!", str(e), "Try again!")
+            console_logger.info(
+                "We have encountered unexpected error!", str(e), "Try again!"
+            )
             file_logger.info("User written wrong input!")
             continue
     return letter

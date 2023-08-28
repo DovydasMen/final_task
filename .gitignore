@@ -2,4 +2,3 @@
 .vscode
 *.log
 __pycache__
-.gitignore

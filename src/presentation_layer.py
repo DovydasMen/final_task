@@ -1,3 +1,4 @@
+# pylint: skip-file
 from typing import Any, Dict, List
 from loggers.log_to_console import console_logger
 
@@ -190,10 +191,10 @@ class Presentation:
         print(f"Sorry {user_name}! You ran out of lifes! That means it's lost! ")
 
     @staticmethod
-    def show_guessing_word(word_in_list: List[str]) -> None:
+    def show_guessing_word(words_letters_in_list: List[str]) -> None:
         print("This is your guessing word:")
         print("\n")
-        for letter in word_in_list:
+        for letter in words_letters_in_list:
             print(letter, end=" ")
         print("\n")
 
